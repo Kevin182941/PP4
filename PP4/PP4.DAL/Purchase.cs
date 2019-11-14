@@ -17,7 +17,7 @@ namespace PP4.DAL
         [Key]
         [Column(Order = 2)]
         public int ID_Person { get; set; }
-        [ForeignKey("ID_Person")]
+        [ForeignKey("ID_Person")] 
         public virtual Person Person { get; set; }
 
 
@@ -34,12 +34,5 @@ namespace PP4.DAL
         [ForeignKey("ID_Seat")]
         public virtual Seat Seat { get; set; }
         
-
-
-
-
-
-
-
     }
 }
