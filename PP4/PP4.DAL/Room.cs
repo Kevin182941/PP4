@@ -17,8 +17,9 @@ namespace PP4.DAL
 
         public bool State { get; set; }
 
+
         public virtual ICollection<Seat> Seats { get; set; }
         
-        public virtual Schedule Schedule { get; set; }
+        public virtual Schedule_Room_Movie Schedule_Room_Movie { get; set; }
     }
 }

@@ -16,18 +16,20 @@ namespace PP4.DAL
         [Key]
         public int ID_Seat { get; set; }
 
+        
         public int ID_Room { get; set; }
         [ForeignKey("ID_Room")]
+
         public virtual Room Room { get; set; }
 
         public string Row { get; set; }
 
         public int Number { get; set; }
 
-        public bool State { get; set; }
+        public decimal Price { get; set; }
 
         [XmlIgnore]
-        public virtual ICollection<Purchase> Purchases { get; set; }
+        public virtual ICollection<Purchase_Seat> Purchase_Seats { get; set; }
 
     }
 }

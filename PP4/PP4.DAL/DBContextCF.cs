@@ -20,15 +20,20 @@ namespace PP4.DAL
 
         public DbSet<Person> Persons { get; set; }
 
-        public DbSet<Seat> Asientos { get; set; }
+        public DbSet<Seat> Seats { get; set; }
 
-        public DbSet<Room> Salas { get; set; }
+        public DbSet<Room> Rooms { get; set; }
 
-        public DbSet<Schedule> Horarios { get; set; }
+        public DbSet<Schedule> Schedules { get; set; }
+
+        public DbSet<Schedule_Room_Movie> Schedule_Rooms { get; set; }
 
         public DbSet<Purchase> Purchases { get; set; }
 
-        public DbSet<Movie> Peliculas { get; set; }
+        public DbSet<Purchase_Seat> Purchase_Seats { get; set; }
+
+        public DbSet<Movie> Movies { get; set; }
+
 
     }
 }
