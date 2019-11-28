@@ -12,15 +12,17 @@ namespace PP4.DAL
 {
     public class Seat
     {
+        #region Attribute
 
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int ID_Seat { get; set; }
 
-        
         public int ID_Room { get; set; }
         [ForeignKey("ID_Room")]
-
         public virtual Room Room { get; set; }
+
+        public string Description_Seat { get; set; }
 
         public string Row { get; set; }
 
@@ -28,8 +30,10 @@ namespace PP4.DAL
 
         public decimal Price { get; set; }
 
-        [XmlIgnore]
-        public virtual ICollection<Purchase_Seat> Purchase_Seats { get; set; }
+        #endregion
+
+       
+
 
     }
 }

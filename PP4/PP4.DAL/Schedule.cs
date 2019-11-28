@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Xml.Serialization;
@@ -7,17 +8,24 @@ namespace PP4.DAL
 {
     public class Schedule
     {
+        #region Attribute
+
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int ID_Schedule { get; set; }
-        
-        public int ID_Schedule_Room_Movie { get; set; }
-        [ForeignKey("ID_Schedule_Room_Movie")]
-        public virtual Schedule_Room_Movie Schedule_Room_Movie { get; set; }
 
-        public int Day { get; set; }
+        public DateTime Day { get; set; }
 
-        public int Hour { get; set; }
-        
+        public bool State { get; set; }
+
+        #endregion
+
+        #region Relation
+        public virtual Batch Batch { get; set; }
+
+        #endregion
+
+
     }
 
    

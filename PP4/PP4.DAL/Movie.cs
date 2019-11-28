@@ -10,13 +10,24 @@ namespace PP4.DAL
 {
     public class Movie
     {
+        #region Attribute 
+
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int ID_Movie { get; set; }
 
-        public string Tittle { get; set; }
+        public string Description_Movie { get; set; }
 
         public int Duration { get; set; }
 
-        public virtual Schedule_Room_Movie  Schedule_Room_Movie { get; set; }
+        public bool State { get; set; }
+
+        #endregion
+
+        #region Relation
+        public virtual Batch Batch { get; set; }
+
+        #endregion
+
     }
 }

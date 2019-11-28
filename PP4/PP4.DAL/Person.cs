@@ -11,6 +11,9 @@ namespace PP4.DAL
 {
     public class Person
     {
+        #region Attribute
+
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int ID_Person { get; set; }
 
@@ -26,8 +29,14 @@ namespace PP4.DAL
 
         public int Points { get; set; }
 
+        #endregion
+
+        #region Relation
+
         [XmlIgnore]
         public virtual ICollection<Purchase> Purchases { get; set; }
+
+        #endregion
     }
     
 }

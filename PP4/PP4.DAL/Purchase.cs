@@ -11,24 +11,28 @@ namespace PP4.DAL
 {
     public class Purchase
     {
+        #region Attribute
+
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int ID_Purchase { get; set; }
 
-        
+        public int ID_Batch { get; set; }
+        [ForeignKey("ID_Batch")]
+        public virtual Batch Batch { get; set; }
+
+
         public int ID_Person { get; set; }
         [ForeignKey("ID_Person")]
         public virtual Person Person { get; set; }
 
-        
-        public int ID_Schedule_Room_Movie { get; set; }
-        [ForeignKey("ID_Schedule_Room_Movie")]
-        public virtual Schedule_Room_Movie Schedule_Room_Movie { get; set; }
+        public DateTime Date_Purchase { get; set; }
 
-        [XmlIgnore]
-        public virtual ICollection<Purchase_Seat> Purchase_Seats { get; set; }
-
-
-
+        #endregion
 
     }
-}
+
+      
+
+    }
+
