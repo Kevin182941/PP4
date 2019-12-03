@@ -53,6 +53,9 @@
   <ItemGroup>
     <Compile Include="Data_Movies.cs" />
     <Compile Include="Data_Purchase.cs" />
+    <Compile Include="Data_Room.cs" />
+    <Compile Include="Data_Schedule.cs" />
+    <Compile Include="Data_Seat.cs" />
     <Compile Include="IRepositorio.cs" />
     <Compile Include="Data_People.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
