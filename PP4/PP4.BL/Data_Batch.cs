@@ -9,22 +9,20 @@ using System.Threading.Tasks;
 
 namespace PP4.BL
 {
-    class Data_Schedule : IRepositorio<Schedule>
+    class Data_Batch : IRepositorio<Batch>
     {
+        #region CRUD Room
 
-
-        #region CRUD Schedule 
-
-        public void Delete(int IDSchedule)
+        public void Delete(int IDBatch)
         {
             using (DBContextCF context = new DBContextCF())
             {
                 try
                 {
-                    var toDelete = context.Schedules.Where(x => x.ID_Schedule == IDSchedule).SingleOrDefault();
+                    var toDelete = context.Batches.Where(x => x.ID_Batch == IDBatch).SingleOrDefault();
                     if (toDelete != null)
                     {
-                        context.Schedules.Remove(toDelete);
+                        context.Batches.Remove(toDelete);
                         context.SaveChanges();
                     }
                 }
@@ -36,14 +34,13 @@ namespace PP4.BL
             }
         }
 
-
         public IEnumerable Get()
         {
             using (DBContextCF context = new DBContextCF())
             {
                 try
                 {
-                    return context.Schedules.ToList();
+                    return context.Batches.ToList();
                 }
                 catch
                 {
@@ -54,13 +51,13 @@ namespace PP4.BL
             return null;
         }
 
-        public Schedule GetrById(int IDSchedule)
+        public Batch GetrById(int IDBatch)
         {
             using (DBContextCF context = new DBContextCF())
             {
                 try
                 {
-                    return context.Schedules.Where(x => x.ID_Schedule == IDSchedule).SingleOrDefault();
+                    return context.Batches.Where(x => x.ID_Batch == IDBatch).SingleOrDefault();
                 }
                 catch
                 {
@@ -71,13 +68,13 @@ namespace PP4.BL
             return null;
         }
 
-        public void Insert(Schedule item)
+        public void Insert(Batch item)
         {
             using (DBContextCF context = new DBContextCF())
             {
                 try
                 {
-                    context.Schedules.Add(item);
+                    context.Batches.Add(item);
                     context.SaveChanges();
                 }
                 catch
@@ -90,7 +87,7 @@ namespace PP4.BL
 
       
 
-        public void Update(Schedule item)
+        public void Update(Batch item)
         {
             using (DBContextCF context = new DBContextCF())
             {
@@ -112,9 +109,6 @@ namespace PP4.BL
             throw new NotImplementedException();
         }
 
-
-
-        #endregion CRUD Schedule 
-
+        #endregion CRUD Room
     }
 }

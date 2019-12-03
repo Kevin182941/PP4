@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data_Batch.cs" />
     <Compile Include="Data_Movies.cs" />
     <Compile Include="Data_Purchase.cs" />
     <Compile Include="Data_Room.cs" />
