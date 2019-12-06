@@ -1,0 +1,36 @@
+﻿@model List<PP4.Services.Models.ViewModels.ListPersonViewModel>
+@{
+    ViewBag.Title = "Information about person";
+}
+
+<h2>Client Information</h2>
+
+<div class="row" style="text-align:right";paddinng:5px; >
+    <a href="~/Person/Nuevo" class="btn btn-primary">Nuevo</a>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class = "table">
+            <tr>
+
+                <th>Identification</th>
+                <th>Name</th>
+                <th>Mail</th>
+
+            </tr>
+            @foreach (var Elemento in Model)
+            {
+
+                <tr>
+                    <th>@Elemento.Identification</th>
+                    <th>@Elemento.Name</th>
+                    <th>@Elemento.Mail</th>
+                </tr>
+
+            }
+
+        </table>
+
+    </div>
+</div>
