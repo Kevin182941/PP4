@@ -9,7 +9,9 @@ namespace PP4.Services.Models.ViewModels
     public class TablaViewModel
     {
 
+
        
+        public int ID_Person { get; set; }
 
         [Required]
         [Display(Name = "Name")]
@@ -38,6 +40,10 @@ namespace PP4.Services.Models.ViewModels
         [Required]
         [Display(Name = "Points")]
         public int Points { get; set; }
+
+
+
+
 
     }
 }

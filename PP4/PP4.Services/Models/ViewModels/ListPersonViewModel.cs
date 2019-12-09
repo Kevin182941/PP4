@@ -7,6 +7,7 @@ namespace PP4.Services.Models.ViewModels
 {
     public class ListPersonViewModel
     {
+
         public int ID_Person { get; set; }
 
         public string Name { get; set; }

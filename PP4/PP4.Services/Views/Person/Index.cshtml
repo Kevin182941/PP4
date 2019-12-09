@@ -6,33 +6,45 @@
 <h2>Client Information</h2>
 
 <div class="row" style="text-align:right";paddinng:5px; >
-    <a href="~/Person/Nuevo" class="btn btn-primary">Nuevo</a>
+    <a href="~/Person/New" class="btn btn-primary">New</a>
 </div>
+<br />
 
+<br />
 <div class="row">
     <div class="col-md-12">
-        <table class = "table">
+        <table class="table">
             <tr>
-
+                <td>ID_Person</td>
                 <th>Identification</th>
                 <th>Name</th>
                 <th>Mail</th>
                 <th>Password</th>
+                <th>Ind_User</th>
                 <th>Points</th>
+               
+
 
             </tr>
             @foreach (var Elemento in Model)
-            {
+             {
 
         <tr>
-            <th>@Elemento.Identification</th>
-            <th>@Elemento.Name</th>
-            <th>@Elemento.Mail</th>
-            <th>@Elemento.Password</th>
-            <th>@Elemento.Points</th>
-        </tr>
+            <td>@Elemento.ID_Person</td>
+            <td>@Elemento.Identification</td>
+            <td>@Elemento.Name</td>
+            <td>@Elemento.Mail</td>
+            <td>@Elemento.Password</td>
+            <th>@Elemento.Ind_User</th>
+            <td>@Elemento.Points</td>
+            <td>
+                <a class="btn btn-default" href="~/Person/Edit/@Elemento.ID_Person">Edit</a>
+                <tf></tf>
+                <a class="btn btn-danger" href="~/Person/Delete/@Elemento.ID_Person">Delete</a>
+            </td>
+        </tr>              
 
-            }
+             }
 
         </table>
 
