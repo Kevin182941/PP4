@@ -1,0 +1,50 @@
+﻿@model List<PP4.Services.Models.ViewModels.ViewModelBatch.ListBatchViewModel>
+@{
+    ViewBag.Title = "Information about batch";
+}
+
+<h2>Batch Information</h2>
+
+<div class="row" style="text-align:right" ;paddinng:5px;>
+    <a href="~/Batch/New" class="btn btn-primary">New</a>
+</div>
+<br />
+
+<br />
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <tr>
+                <td>ID_Batch</td>
+                <th>ID_Room</th>
+                <th>ID_Schedule</th>
+                <th>ID_Room</th>
+             
+
+
+
+            </tr>
+            @foreach (var Elemento in Model)
+            {
+
+                <tr>
+                    <td>@Elemento.ID_Batch</td>
+                    <td>@Elemento.ID_Room</td>
+                    <td>@Elemento.ID_Schedule</td>
+                    <td>@Elemento.ID_Room</td>
+              
+                    <td>
+                        <a class="btn btn-default" href="~/Batch/Edit/@Elemento.ID_Batch">Edit</a>
+                        <tf></tf>
+                        <a class="btn btn-danger" href="~/Batch/Delete/@Elemento.ID_Batch">Delete</a>
+                    </td>
+                </tr>
+
+
+
+            }
+
+        </table>
+
+    </div>
+</div>

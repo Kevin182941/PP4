@@ -133,13 +133,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\BatchController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\ViewModels\ListPersonViewModel.cs" />
-    <Compile Include="Models\ViewModels\TablaViewModel.cs" />
+    <Compile Include="Models\ViewModels\ViewModelBatch\ListBatchViewModel.cs" />
+    <Compile Include="Models\ViewModels\ViewModelBatch\TablaViewModel.cs" />
+    <Compile Include="Models\ViewModels\ViewModelPerson\ListPersonViewModel.cs" />
+    <Compile Include="Models\ViewModels\ViewModelPerson\TablaViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -204,6 +207,9 @@
     <Content Include="Views\Person\Index.cshtml" />
     <Content Include="Views\Person\New.cshtml" />
     <Content Include="Views\Person\Edit.cshtml" />
+    <Content Include="Views\Batch\Index.cshtml" />
+    <Content Include="Views\Batch\New.cshtml" />
+    <Content Include="Views\Batch\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
