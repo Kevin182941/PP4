@@ -9,7 +9,7 @@ namespace PP4.Services.Models.ViewModels
     public class TablaViewModel
     {
 
-        public int ID_Person { get; set; }
+       
 
         [Required]
         [Display(Name = "Name")]

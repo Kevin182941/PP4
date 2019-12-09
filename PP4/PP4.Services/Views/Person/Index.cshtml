@@ -17,16 +17,20 @@
                 <th>Identification</th>
                 <th>Name</th>
                 <th>Mail</th>
+                <th>Password</th>
+                <th>Points</th>
 
             </tr>
             @foreach (var Elemento in Model)
             {
 
-                <tr>
-                    <th>@Elemento.Identification</th>
-                    <th>@Elemento.Name</th>
-                    <th>@Elemento.Mail</th>
-                </tr>
+        <tr>
+            <th>@Elemento.Identification</th>
+            <th>@Elemento.Name</th>
+            <th>@Elemento.Mail</th>
+            <th>@Elemento.Password</th>
+            <th>@Elemento.Points</th>
+        </tr>
 
             }
 

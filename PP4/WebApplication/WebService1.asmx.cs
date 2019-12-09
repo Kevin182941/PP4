@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using System.Xml.Serialization;
+using Newtonsoft.Json;
 using PP4.BL;
 using PP4.DAL;
-
-
-
 
 namespace WebApplication
 {
@@ -68,13 +68,16 @@ namespace WebApplication
         }
 
         [WebMethod]
-        public Person GetPerson(int id)
+        [XmlInclude(typeof(Person))]
+        public Person FindPerson(int id)
         {
             Data_People data_People = new Data_People();
-
             var person = data_People.GetrById(id);
 
             return person;
         }
+
+
     }
+    
 }

@@ -16,7 +16,7 @@ namespace PP4.DAL
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int ID_Person { get; set; }
-
+        
         public string Name { get; set; }
 
         public string Identification { get; set; }

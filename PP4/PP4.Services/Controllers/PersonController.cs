@@ -14,21 +14,22 @@ namespace PP4.Services.Controllers
         // GET: Person
         public ActionResult Index()
         {
+            List<ListPersonViewModel> lst;
             using (DBContextCF db = new DBContextCF())
             {
-                var lst = (from d in db.Persons
+                 lst = (from d in db.Persons
                            select new ListPersonViewModel
                            {
                                Identification = d.Identification,
                                Name = d.Name,
-                               Mail = d.Mail
+                               Mail = d.Mail,
+                               Points = d.Points
 
 
                            }).ToList();
-
-                return View(lst);
+                
             }
-
+            return View(lst);
 
         }
 
@@ -36,7 +37,7 @@ namespace PP4.Services.Controllers
         {
             return View();
         }
-
+       
         [HttpPost]
         public ActionResult Nuevo(TablaViewModel model)
         {
@@ -59,10 +60,11 @@ namespace PP4.Services.Controllers
                         db.SaveChanges();
                     
                     }
+                    return Redirect("~/Person/");
 
                 }
-                Redirect("Persona/");
-            
+
+                return View(model);
 
             } catch (Exception ex)
             {
@@ -71,7 +73,7 @@ namespace PP4.Services.Controllers
             }
           
 
-            return View();
+          
         }
     }
  }
