@@ -10,8 +10,8 @@ namespace PP4.DAL
     {
         #region Attribute
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Key]
+        [Key,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+      
         public int ID_Schedule { get; set; }
 
         public DateTime Day { get; set; }
@@ -20,11 +20,7 @@ namespace PP4.DAL
 
         #endregion
 
-        #region Relation
-        public virtual Batch Batch { get; set; }
-
-        #endregion
-
+        public virtual ICollection<Batch> Batches { get; set; }
 
     }
 

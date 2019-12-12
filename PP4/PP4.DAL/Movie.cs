@@ -24,10 +24,7 @@ namespace PP4.DAL
 
         #endregion
 
-        #region Relation
-        public virtual Batch Batch { get; set; }
-
-        #endregion
+        public virtual ICollection<Batch> Batches { get; set; }
 
     }
 }

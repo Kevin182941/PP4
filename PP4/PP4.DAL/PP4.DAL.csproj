@@ -51,9 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201911280616457_CambiosCodeFirst27_11.cs" />
-    <Compile Include="Migrations\201911280616457_CambiosCodeFirst27_11.designer.cs">
-      <DependentUpon>201911280616457_CambiosCodeFirst27_11.cs</DependentUpon>
+    <Compile Include="Migrations\201912120319177_codefirst_11_12_2019.cs" />
+    <Compile Include="Migrations\201912120319177_codefirst_11_12_2019.designer.cs">
+      <DependentUpon>201912120319177_codefirst_11_12_2019.cs</DependentUpon>
     </Compile>
     <Compile Include="Purchase_Seat.cs" />
     <Compile Include="Batch.cs" />
@@ -72,8 +72,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201911280616457_CambiosCodeFirst27_11.resx">
-      <DependentUpon>201911280616457_CambiosCodeFirst27_11.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201912120319177_codefirst_11_12_2019.resx">
+      <DependentUpon>201912120319177_codefirst_11_12_2019.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

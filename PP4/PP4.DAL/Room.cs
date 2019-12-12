@@ -13,8 +13,7 @@ namespace PP4.DAL
     {
         #region Attribute
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Key]
+        [Key,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID_Room { get; set; }
 
         public string Description { get; set; }
@@ -24,12 +23,9 @@ namespace PP4.DAL
         public bool State { get; set; }
         #endregion
 
-        #region Relation
-        [XmlIgnore]
-        public virtual ICollection<Seat> Seats { get; set; }
-        
-        public virtual Batch Batch { get; set; }
 
-        #endregion
+        public virtual ICollection<Batch> Batches { get; set; }
+
+        public virtual ICollection<Seat> Seats { get; set; }
     }
 }

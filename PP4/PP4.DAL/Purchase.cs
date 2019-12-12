@@ -13,26 +13,21 @@ namespace PP4.DAL
     {
         #region Attribute
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Key]
+        [Key,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID_Purchase { get; set; }
 
         public int ID_Batch { get; set; }
-        [ForeignKey("ID_Batch")]
-        public virtual Batch Batch { get; set; }
-
 
         public int ID_Person { get; set; }
-        [ForeignKey("ID_Person")]
-        public virtual Person Person { get; set; }
 
         public DateTime Date_Purchase { get; set; }
 
         #endregion
 
+        public virtual ICollection<Purchase_Seat> Purchase_Seats { get; set; }
     }
 
-      
 
-    }
+
+}
 

@@ -13,8 +13,8 @@ namespace PP4.DAL
     {
         #region Attribute
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Key]
+        [Key,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+       
         public int ID_Person { get; set; }
         
         public string Name { get; set; }
@@ -31,12 +31,7 @@ namespace PP4.DAL
 
         #endregion
 
-        #region Relation
-
-        [XmlIgnore]
         public virtual ICollection<Purchase> Purchases { get; set; }
-
-        #endregion
     }
     
 }

@@ -9,27 +9,14 @@ namespace PP4.DAL
     {
         #region Attribute
 
-        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Key]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID_Purchase_Seat { get; set; }
 
         public int ID_Purchase { get; set; }
-        [ForeignKey("ID_Purchase")]
-        [XmlIgnore]
-        public virtual ICollection<Purchase> Purchases { get; set; }
-
+        
         public int ID_Seat { get; set; }
-        [ForeignKey("ID_Seat")]
-        [XmlIgnore]
-        public virtual ICollection<Seat> Seats { get; set; }
-
-
-        public virtual Person Person { get; set; }
-
+        
         #endregion
-
-
-
 
     }
 }
