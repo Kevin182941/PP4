@@ -158,6 +158,8 @@
     <Compile Include="Models\ViewModels\ViewModelMovie\TablaViewModel.cs" />
     <Compile Include="Models\ViewModels\ViewModelPerson\ListPersonViewModel.cs" />
     <Compile Include="Models\ViewModels\ViewModelPerson\TablaViewModel.cs" />
+    <Compile Include="Models\ViewModels\ViewModelRoom\ListRoomViewModel.cs" />
+    <Compile Include="Models\ViewModels\ViewModelRoom\TablaViewModel.cs" />
     <Compile Include="Models\ViewModels\ViewModelSchedule\ListScheduleViewModel.cs" />
     <Compile Include="Models\ViewModels\ViewModelSchedule\TablaViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -233,10 +235,12 @@
     <Content Include="Views\Schedule\Index.cshtml" />
     <Content Include="Views\Schedule\New.cshtml" />
     <Content Include="Views\Schedule\Edit.cshtml" />
+    <Content Include="Views\Room\Index.cshtml" />
+    <Content Include="Views\Room\New.cshtml" />
+    <Content Include="Views\Room\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Room\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

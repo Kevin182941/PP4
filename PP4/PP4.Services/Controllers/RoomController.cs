@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PP4.DAL;
+using PP4.Services.Models.ViewModels.ViewModelRoom;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +13,132 @@ namespace PP4.Services.Controllers
         // GET: Room
         public ActionResult Index()
         {
+            List<ListRoomViewModel> lst;
+            using (DBContextCF db = new DBContextCF())
+            {
+                lst = (from d in db.Rooms
+                       select new ListRoomViewModel
+                       {
+                           ID_Room = d.ID_Room,
+                           Capacity = d.Capacity,
+                           Description = d.Description,
+                           State = d.State,                      
+
+
+                       }).ToList();
+
+            }
+            return View(lst);
+
+        }
+
+        public ActionResult New()
+        {
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult New(TablaViewModel model)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    using (DBContextCF db = new DBContextCF())
+                    {
+
+                        var room = new Room();
+                        room.ID_Room = model.ID_Room;
+                        room.Capacity = model.Capacity;
+                        room.Description = model.Description;
+                        room.State = model.State;
+                       
+
+                        db.Rooms.Add(room);
+                        db.SaveChanges();
+
+                    }
+                    return Redirect("~/Room/");
+
+                }
+
+                return View(model);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+
+            }
+
+        }
+
+        public ActionResult Edit(int id)
+        {
+            TablaViewModel model = new TablaViewModel();
+            using (DBContextCF db = new DBContextCF())
+            {
+
+                var room = db.Rooms.Find(id);
+
+                model.Capacity = model.Capacity;
+                model.Description = model.Description;
+                model.State = model.State;
+                model.ID_Room = room.ID_Room;
+
+            }
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(TablaViewModel model)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+
+                    using (DBContextCF db = new DBContextCF())
+                    {
+                        var room = db.Rooms.Find(model.ID_Room);
+                        room.Capacity = model.Capacity;
+                        room.Description = model.Description;                        
+                        room.State = model.State;                    
+
+
+
+                        db.Entry(room).State = System.Data.Entity.EntityState.Modified;
+                        db.SaveChanges();
+
+
+                    }
+
+                    return Redirect("~/Room/");
+                }
+                return View(model);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+
+            }
+        }
+
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            TablaViewModel model = new TablaViewModel();
+            using (DBContextCF db = new DBContextCF())
+            {
+
+                var room = db.Rooms.Find(id);
+                db.Rooms.Remove(room);
+                db.SaveChanges();
+
+
+            }
+            return Redirect("~/Room/");
         }
     }
 }

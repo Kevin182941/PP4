@@ -1,0 +1,50 @@
+﻿@model List<PP4.Services.Models.ViewModels.ViewModelRoom.ListRoomViewModel>
+@{
+    ViewBag.Title = "Information about room";
+}
+
+<h2>Client Information</h2>
+
+<div class="row" style="text-align:right" ;paddinng:5px;>
+    <a href="~/Room/New" class="btn btn-primary">New</a>
+</div>
+<br />
+
+<br />
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <tr>
+                <td>ID_Room</td>
+                <th>Capacity</th>
+                <th>Description</th>
+                <th>State</th>
+                
+
+
+
+            </tr>
+            @foreach (var Elemento in Model)
+            {
+
+                <tr>
+                    <td>@Elemento.ID_Room</td>
+                    <td>@Elemento.Capacity</td>
+                    <td>@Elemento.Description</td>
+                    <td>@Elemento.State</td>
+                   
+                    <td>
+                        <a class="btn btn-default" href="~/Room/Edit/@Elemento.ID_Room">Edit</a>
+                        <tf></tf>
+                        <a class="btn btn-danger" href="~/Room/Delete/@Elemento.ID_Room">Delete</a>
+                    </td>
+                </tr>
+
+
+
+            }
+
+        </table>
+
+    </div>
+</div>
