@@ -1,0 +1,50 @@
+﻿@model List<PP4.Services.Models.ViewModels.ViewModelPurchase.ListPurchaseViewModel>
+@{
+    ViewBag.Title = "Information about purchase";
+}
+
+<h2>Purchase Information</h2>
+
+<div class="row" style="text-align:right" ;paddinng:5px;>
+    <a href="~/Purchase/New" class="btn btn-primary">New</a>
+</div>
+<br />
+
+<br />
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <tr>
+                <td>ID_Purchase</td>
+                <th>ID_Batch</th>
+                <th>ID_Person</th>
+                <th>Date_Purchase</th>
+              
+
+
+
+            </tr>
+            @foreach (var Elemento in Model)
+            {
+
+                <tr>
+                    <td>@Elemento.ID_Purchase</td>
+                    <td>@Elemento.ID_Batch</td>
+                    <td>@Elemento.ID_Person</td>
+                    <td>@Elemento.Date_Purchase</td>
+                  
+                    <td>
+                        <a class="btn btn-default" href="~/Purchase/Edit/@Elemento.ID_Purchase">Edit</a>
+                        <tf></tf>
+                        <a class="btn btn-danger" href="~/Purchase/Delete/@Elemento.ID_Purchase">Delete</a>
+                    </td>
+                </tr>
+
+
+
+            }
+
+        </table>
+
+    </div>
+</div>

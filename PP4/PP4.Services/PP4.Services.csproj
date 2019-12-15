@@ -147,6 +147,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MovieController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
+    <Compile Include="Controllers\PurchaseController.cs" />
     <Compile Include="Controllers\RoomController.cs" />
     <Compile Include="Controllers\ScheduleController.cs" />
     <Compile Include="Global.asax.cs">
@@ -158,6 +159,8 @@
     <Compile Include="Models\ViewModels\ViewModelMovie\TablaViewModel.cs" />
     <Compile Include="Models\ViewModels\ViewModelPerson\ListPersonViewModel.cs" />
     <Compile Include="Models\ViewModels\ViewModelPerson\TablaViewModel.cs" />
+    <Compile Include="Models\ViewModels\ViewModelPurchase\ListPurchaseViewModel.cs" />
+    <Compile Include="Models\ViewModels\ViewModelPurchase\TablaViewModel.cs" />
     <Compile Include="Models\ViewModels\ViewModelRoom\ListRoomViewModel.cs" />
     <Compile Include="Models\ViewModels\ViewModelRoom\TablaViewModel.cs" />
     <Compile Include="Models\ViewModels\ViewModelSchedule\ListScheduleViewModel.cs" />
@@ -238,6 +241,9 @@
     <Content Include="Views\Room\Index.cshtml" />
     <Content Include="Views\Room\New.cshtml" />
     <Content Include="Views\Room\Edit.cshtml" />
+    <Content Include="Views\Purchase\Index.cshtml" />
+    <Content Include="Views\Purchase\New.cshtml" />
+    <Content Include="Views\Purchase\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
