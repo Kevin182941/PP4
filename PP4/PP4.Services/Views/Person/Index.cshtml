@@ -22,29 +22,31 @@
                 <th>Password</th>
                 <th>Ind_User</th>
                 <th>Points</th>
-               
+
 
 
             </tr>
             @foreach (var Elemento in Model)
-             {
+            {
 
-        <tr>
-            <td>@Elemento.ID_Person</td>
-            <td>@Elemento.Identification</td>
-            <td>@Elemento.Name</td>
-            <td>@Elemento.Mail</td>
-            <td>@Elemento.Password</td>
-            <th>@Elemento.Ind_User</th>
-            <td>@Elemento.Points</td>
-            <td>
-                <a class="btn btn-default" href="~/Person/Edit/@Elemento.ID_Person">Edit</a>
-                <tf></tf>
-                <a class="btn btn-danger" href="~/Person/Delete/@Elemento.ID_Person">Delete</a>
-            </td>
-        </tr>              
+                <tr>
+                    <td>@Elemento.ID_Person</td>
+                    <td>@Elemento.Identification</td>
+                    <td>@Elemento.Name</td>
+                    <td>@Elemento.Mail</td>
+                    <td>@Elemento.Password</td>
+                    <th>@Elemento.Ind_User</th>
+                    <td>@Elemento.Points</td>
+                    <td>
+                        <a class="btn btn-default" href="~/Person/Edit/@Elemento.ID_Person">Edit</a>
+                        <tf></tf>
+                        <a class="btn btn-danger" href="~/Person/Delete/@Elemento.ID_Person">Delete</a>
+                    </td>
+                </tr>
 
-             }
+
+
+            }
 
         </table>
 

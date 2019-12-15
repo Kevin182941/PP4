@@ -14,6 +14,7 @@ namespace PP4.DAL
       
         public int ID_Schedule { get; set; }
 
+        
         public DateTime Day { get; set; }
 
         public bool State { get; set; }

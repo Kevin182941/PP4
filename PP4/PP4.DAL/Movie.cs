@@ -12,8 +12,8 @@ namespace PP4.DAL
     {
         #region Attribute 
 
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        [Key]
+        [Key,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+       
         public int ID_Movie { get; set; }
 
         public string Description_Movie { get; set; }

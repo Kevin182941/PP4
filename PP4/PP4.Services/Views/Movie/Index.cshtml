@@ -1,0 +1,50 @@
+﻿@model List<PP4.Services.Models.ViewModels.ViewModelMovie.ListMovieViewModel>
+@{
+    ViewBag.Title = "Information about Movie";
+}
+
+<h2>Movie Information</h2>
+
+<div class="row" style="text-align:right" ;paddinng:5px;>
+    <a href="~/Movie/New" class="btn btn-primary">New</a>
+</div>
+<br />
+
+<br />
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <tr>
+                <td>ID_Movie</td>
+                <th>Description_Movie</th>
+                <th>Duration</th>
+                <th>State</th>
+
+
+
+
+            </tr>
+            @foreach (var Elemento in Model)
+            {
+
+                <tr>
+                    <td>@Elemento.ID_Movie</td>
+                    <td>@Elemento.Description_Movie</td>
+                    <td>@Elemento.Duration</td>
+                    <td>@Elemento.State</td>
+
+                    <td>
+                        <a class="btn btn-default" href="~/Movie/Edit/@Elemento.ID_Movie">Edit</a>
+                        <tf></tf>
+                        <a class="btn btn-danger" href="~/Movie/Delete/@Elemento.ID_Movie">Delete</a>
+                    </td>
+                </tr>
+
+
+
+            }
+
+        </table>
+
+    </div>
+</div>

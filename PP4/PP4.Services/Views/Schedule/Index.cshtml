@@ -1,0 +1,49 @@
+﻿@model List<PP4.Services.Models.ViewModels.ViewModelSchedule.ListScheduleViewModel>
+@{
+    ViewBag.Title = "Information about person";
+}
+
+<h2>Client Information</h2>
+
+<div class="row" style="text-align:right" ;paddinng:5px;>
+    <a href="~/Schedule/New" class="btn btn-primary">New</a>
+</div>
+<br />
+
+<br />
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <tr>
+                <td>ID_Schedule</td>
+                <th>Day</th>
+                <th>State</th>
+
+
+
+
+            </tr>
+            @foreach (var Elemento in Model)
+            {
+
+                <tr>
+                    <td>@Elemento.ID_Schedule</td>
+                    <td>@Elemento.Day</td>
+                    <td>@Elemento.State</td>
+
+
+                    <td>
+                        <a class="btn btn-default" href="~/Schedule/Edit/@Elemento.ID_Schedule">Edit</a>
+                        <tf></tf>
+                        <a class="btn btn-danger" href="~/Schedule/Delete/@Elemento.ID_Schedule">Delete</a>
+                    </td>
+                </tr>
+
+
+
+            }
+
+        </table>
+
+    </div>
+</div>
