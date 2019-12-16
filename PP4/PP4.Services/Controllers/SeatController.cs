@@ -16,16 +16,15 @@ namespace PP4.Services.Controllers
             List<ListSeatViewModel> lst;
             using (DBContextCF db = new DBContextCF())
             {
-                lst = (from d in db.Persons
+                lst = (from d in db.Seats
                        select new ListSeatViewModel
                        {
-                           ID_Person = d.ID_Person,
-                           Identification = d.Identification,
-                           Name = d.Name,
-                           Mail = d.Mail,
-                           Password = d.Password,
-                           Ind_User = d.Ind_User,
-                           Points = d.Points
+                           ID_Seat = d.ID_Seat,
+                           ID_Room = d.ID_Room,
+                           Description_Seat = d.Description_Seat,
+                           Row = d.Row,
+                           Number = d.Number,
+                           Price = d.Price
 
 
                        }).ToList();
@@ -33,6 +32,120 @@ namespace PP4.Services.Controllers
             }
             return View(lst);
 
+        }
+
+        public ActionResult New()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult New(TablaViewModel model)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    using (DBContextCF db = new DBContextCF())
+                    {
+
+                      var seat = new Seat();
+                        seat.ID_Seat = model.ID_Seat;
+                        seat.ID_Room = model.ID_Room;
+                        seat.Description_Seat = model.Description_Seat;
+                        seat.Row = model.Row;
+                        seat.Number = model.Number;
+                        seat.Price = model.Price;
+
+                        db.Seats.Add(seat);
+                        db.SaveChanges();
+
+                    }
+                    return Redirect("~/Seat/");
+
+                }
+
+                return View(model);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+
+            }
+
+        }
+
+        public ActionResult Edit(int id)
+        {
+            TablaViewModel model = new TablaViewModel();
+            using (DBContextCF db = new DBContextCF())
+            {
+
+                var seat = db.Seats.Find(id);
+
+                
+                model.Description_Seat = model.Description_Seat;
+                model.ID_Room = model.ID_Room;                
+                model.Row = model.Row;
+                model.Number = model.Number;
+                model.Price = model.Price;
+                model.ID_Seat = seat.ID_Seat;
+
+            }
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(TablaViewModel model)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+
+                    using (DBContextCF db = new DBContextCF())
+                    {
+                        var seat = db.Seats.Find(model.ID_Seat);
+                        seat.ID_Room = model.ID_Room;
+                        seat.Description_Seat = model.Description_Seat;
+                        seat.Row = model.Row;
+                        seat.Number = model.Number;
+                        seat.Price = model.Price;              
+                        
+
+                        db.Entry(seat).State = System.Data.Entity.EntityState.Modified;
+                        db.SaveChanges();
+
+
+                    }
+
+                    return Redirect("~/Seat/");
+                }
+                return View(model);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+
+            }
+        }
+
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            TablaViewModel model = new TablaViewModel();
+            using (DBContextCF db = new DBContextCF())
+            {
+
+                var seat = db.Seats.Find(id);
+                db.Seats.Remove(seat);
+                db.SaveChanges();
+
+
+            }
+            return Redirect("~/Seat/");
         }
     }
 }

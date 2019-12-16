@@ -1,0 +1,55 @@
+﻿@model List<PP4.Services.Models.ViewModels.ViewModelSeat.ListSeatViewModel>
+@{
+    ViewBag.Title = "Information about person";
+}
+
+<h2>Client Information</h2>
+
+<div class="row" style="text-align:right" ;paddinng:5px;>
+    <a href="~/Seat/New" class="btn btn-primary">New</a>
+</div>
+<br />
+
+<br />
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <tr>
+                <td>ID_Seat</td>
+                <th>ID_Room</th>
+                <th>Description_Seat</th>
+                <td>ID_Schedule</td>
+                <th>Row</th>
+                <th>Price</th>
+
+
+
+
+            </tr>
+            @foreach (var Elemento in Model)
+            {
+
+        <tr>
+            <td>@Elemento.ID_Seat</td>
+            <td>@Elemento.ID_Room</td>
+            <td>@Elemento.Description_Seat</td>
+            <td>@Elemento.Row</td>
+            <td>@Elemento.Number</td>
+            <td>@Elemento.Price</td>
+
+
+            <td>
+                <a class="btn btn-default" href="~/Seat/Edit/@Elemento.ID_Seat">Edit</a>
+                <tf></tf>
+                <a class="btn btn-danger" href="~/Seat/Delete/@Elemento.ID_Seat">Delete</a>
+            </td>
+        </tr>
+
+
+
+            }
+
+        </table>
+
+    </div>
+</div>
