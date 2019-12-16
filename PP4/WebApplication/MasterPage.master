@@ -1,0 +1,49 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Masterpage.master.cs" Inherits="PP4.Masterpage" %>
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+  
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+     <link href="Estilos/FormatoLogin.css" type="text/css" rel="stylesheet" />
+     <title>Pagina Principal</title>
+    <asp:ContentPlaceHolder id="head" runat="server" />
+    </asp:ContentPlaceHolder>
+     <style>
+         h1 {
+  list-style-type: none;
+  margin: 0px;
+  padding: 50px;
+  
+  background-color:coral;
+  
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size:50px;
+}
+           .auto-style2 {
+            width: 803px;
+        }
+        .auto-style3 {
+            text-align: center;
+            margin: 10px auto;
+            width: 1066px;
+        }
+        </style>
+</head>
+<body>
+
+</head>
+<body>
+ 
+
+    <div>
+         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>
