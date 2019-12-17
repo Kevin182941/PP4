@@ -80,8 +80,7 @@ namespace PP4.Services.Controllers
                 var purchase_seat = db.Purchase_Seats.Find(id);
 
                 model.ID_Purchase = model.ID_Purchase;
-                model.ID_Seat = model.ID_Seat;
-             
+                model.ID_Seat = model.ID_Seat;             
                 model.ID_Purchase_Seat = purchase_seat.ID_Purchase_Seat;
 
             }

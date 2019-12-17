@@ -84,7 +84,7 @@ namespace PP4.Services.Controllers
 
                 model.ID_Batch = model.ID_Batch;
                 model.ID_Person = model.ID_Person;
-                model.Date_Purchase = model.Date_Purchase;               
+                model.Date_Purchase = model.Date_Purchase;
                 model.ID_Purchase = purchase.ID_Purchase;
 
             }
@@ -101,8 +101,7 @@ namespace PP4.Services.Controllers
 
                     using (DBContextCF db = new DBContextCF())
                     {
-                        var purchase = db.Purchases.Find(model.ID_Purchase);
-                        
+                        var purchase = db.Purchases.Find(model.ID_Purchase);                        
                         purchase.ID_Batch = model.ID_Batch;
                         purchase.ID_Person = model.ID_Person;
                         purchase.Date_Purchase = model.Date_Purchase;

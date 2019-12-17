@@ -31,6 +31,7 @@ namespace PP4.DAL
 
         #endregion
 
+        [XmlIgnore]
         public virtual ICollection<Purchase> Purchases { get; set; }
     }
     

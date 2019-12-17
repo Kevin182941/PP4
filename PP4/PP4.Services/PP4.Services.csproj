@@ -205,6 +205,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\2251682.png" />
+    <Content Include="Images\6109dc9cf92600c605dd0f7a52062b0f_icon.png" />
+    <Content Include="Images\images.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Connected Services\ServiceReference1\WebService1.wsdl" />
@@ -248,13 +251,16 @@
     <Content Include="Views\Room\Edit.cshtml" />
     <Content Include="Views\Purchase\Index.cshtml" />
     <Content Include="Views\Purchase\New.cshtml" />
-    <Content Include="Views\Purchase\Edit.cshtml" />
     <Content Include="Views\Main\Index.cshtml" />
     <Content Include="Views\PurchaseSeat\Index.cshtml" />
     <Content Include="Views\PurchaseSeat\New.cshtml" />
     <Content Include="Views\Seat\Index.cshtml" />
     <Content Include="Views\Seat\Edit.cshtml" />
     <Content Include="Views\Seat\New.cshtml" />
+    <Content Include="Views\PurchaseSeat\Edit.cshtml" />
+    <Content Include="Views\Purchase\Edit.cshtml" />
+    <Content Include="Views\Person\New.cshtml" />
+    <Content Include="Views\Person\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
