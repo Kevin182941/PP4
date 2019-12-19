@@ -9,7 +9,147 @@
 //------------------------------------------------------------------------------
 
 namespace PP4.ConsoleTest.ServiceReference1 {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Person", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class Person : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int ID_PersonField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string IdentificationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PasswordField;
+        
+        private bool Ind_UserField;
+        
+        private int PointsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int ID_Person {
+            get {
+                return this.ID_PersonField;
+            }
+            set {
+                if ((this.ID_PersonField.Equals(value) != true)) {
+                    this.ID_PersonField = value;
+                    this.RaisePropertyChanged("ID_Person");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Identification {
+            get {
+                return this.IdentificationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IdentificationField, value) != true)) {
+                    this.IdentificationField = value;
+                    this.RaisePropertyChanged("Identification");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string Mail {
+            get {
+                return this.MailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MailField, value) != true)) {
+                    this.MailField = value;
+                    this.RaisePropertyChanged("Mail");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string Password {
+            get {
+                return this.PasswordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PasswordField, value) != true)) {
+                    this.PasswordField = value;
+                    this.RaisePropertyChanged("Password");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public bool Ind_User {
+            get {
+                return this.Ind_UserField;
+            }
+            set {
+                if ((this.Ind_UserField.Equals(value) != true)) {
+                    this.Ind_UserField = value;
+                    this.RaisePropertyChanged("Ind_User");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public int Points {
+            get {
+                return this.PointsField;
+            }
+            set {
+                if ((this.PointsField.Equals(value) != true)) {
+                    this.PointsField = value;
+                    this.RaisePropertyChanged("Points");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.WebService1Soap")]
@@ -21,6 +161,33 @@ namespace PP4.ConsoleTest.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
         System.Threading.Tasks.Task<PP4.ConsoleTest.ServiceReference1.HelloWorldResponse> HelloWorldAsync(PP4.ConsoleTest.ServiceReference1.HelloWorldRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento Identification del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AddPerson", ReplyAction="*")]
+        PP4.ConsoleTest.ServiceReference1.AddPersonResponse AddPerson(PP4.ConsoleTest.ServiceReference1.AddPersonRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AddPerson", ReplyAction="*")]
+        System.Threading.Tasks.Task<PP4.ConsoleTest.ServiceReference1.AddPersonResponse> AddPersonAsync(PP4.ConsoleTest.ServiceReference1.AddPersonRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeletePerson", ReplyAction="*")]
+        void DeletePerson(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeletePerson", ReplyAction="*")]
+        System.Threading.Tasks.Task DeletePersonAsync(int id);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento Identification del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UpdatePerson", ReplyAction="*")]
+        PP4.ConsoleTest.ServiceReference1.UpdatePersonResponse UpdatePerson(PP4.ConsoleTest.ServiceReference1.UpdatePersonRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UpdatePerson", ReplyAction="*")]
+        System.Threading.Tasks.Task<PP4.ConsoleTest.ServiceReference1.UpdatePersonResponse> UpdatePersonAsync(PP4.ConsoleTest.ServiceReference1.UpdatePersonRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento FindPersonResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/FindPerson", ReplyAction="*")]
+        PP4.ConsoleTest.ServiceReference1.FindPersonResponse FindPerson(PP4.ConsoleTest.ServiceReference1.FindPersonRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/FindPerson", ReplyAction="*")]
+        System.Threading.Tasks.Task<PP4.ConsoleTest.ServiceReference1.FindPersonResponse> FindPersonAsync(PP4.ConsoleTest.ServiceReference1.FindPersonRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -84,6 +251,231 @@ namespace PP4.ConsoleTest.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AddPersonRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AddPerson", Namespace="http://tempuri.org/", Order=0)]
+        public PP4.ConsoleTest.ServiceReference1.AddPersonRequestBody Body;
+        
+        public AddPersonRequest() {
+        }
+        
+        public AddPersonRequest(PP4.ConsoleTest.ServiceReference1.AddPersonRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AddPersonRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string Identification;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string Name;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Mail;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string Password;
+        
+        public AddPersonRequestBody() {
+        }
+        
+        public AddPersonRequestBody(string Identification, string Name, string Mail, string Password) {
+            this.Identification = Identification;
+            this.Name = Name;
+            this.Mail = Mail;
+            this.Password = Password;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AddPersonResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AddPersonResponse", Namespace="http://tempuri.org/", Order=0)]
+        public PP4.ConsoleTest.ServiceReference1.AddPersonResponseBody Body;
+        
+        public AddPersonResponse() {
+        }
+        
+        public AddPersonResponse(PP4.ConsoleTest.ServiceReference1.AddPersonResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AddPersonResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public PP4.ConsoleTest.ServiceReference1.Person AddPersonResult;
+        
+        public AddPersonResponseBody() {
+        }
+        
+        public AddPersonResponseBody(PP4.ConsoleTest.ServiceReference1.Person AddPersonResult) {
+            this.AddPersonResult = AddPersonResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class UpdatePersonRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdatePerson", Namespace="http://tempuri.org/", Order=0)]
+        public PP4.ConsoleTest.ServiceReference1.UpdatePersonRequestBody Body;
+        
+        public UpdatePersonRequest() {
+        }
+        
+        public UpdatePersonRequest(PP4.ConsoleTest.ServiceReference1.UpdatePersonRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class UpdatePersonRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string Identification;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Name;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string Mail;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string Password;
+        
+        public UpdatePersonRequestBody() {
+        }
+        
+        public UpdatePersonRequestBody(int id, string Identification, string Name, string Mail, string Password) {
+            this.id = id;
+            this.Identification = Identification;
+            this.Name = Name;
+            this.Mail = Mail;
+            this.Password = Password;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class UpdatePersonResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdatePersonResponse", Namespace="http://tempuri.org/", Order=0)]
+        public PP4.ConsoleTest.ServiceReference1.UpdatePersonResponseBody Body;
+        
+        public UpdatePersonResponse() {
+        }
+        
+        public UpdatePersonResponse(PP4.ConsoleTest.ServiceReference1.UpdatePersonResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class UpdatePersonResponseBody {
+        
+        public UpdatePersonResponseBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FindPersonRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FindPerson", Namespace="http://tempuri.org/", Order=0)]
+        public PP4.ConsoleTest.ServiceReference1.FindPersonRequestBody Body;
+        
+        public FindPersonRequest() {
+        }
+        
+        public FindPersonRequest(PP4.ConsoleTest.ServiceReference1.FindPersonRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class FindPersonRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        public FindPersonRequestBody() {
+        }
+        
+        public FindPersonRequestBody(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class FindPersonResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="FindPersonResponse", Namespace="http://tempuri.org/", Order=0)]
+        public PP4.ConsoleTest.ServiceReference1.FindPersonResponseBody Body;
+        
+        public FindPersonResponse() {
+        }
+        
+        public FindPersonResponse(PP4.ConsoleTest.ServiceReference1.FindPersonResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class FindPersonResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public PP4.ConsoleTest.ServiceReference1.Person FindPersonResult;
+        
+        public FindPersonResponseBody() {
+        }
+        
+        public FindPersonResponseBody(PP4.ConsoleTest.ServiceReference1.Person FindPersonResult) {
+            this.FindPersonResult = FindPersonResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface WebService1SoapChannel : PP4.ConsoleTest.ServiceReference1.WebService1Soap, System.ServiceModel.IClientChannel {
     }
@@ -132,6 +524,102 @@ namespace PP4.ConsoleTest.ServiceReference1 {
             PP4.ConsoleTest.ServiceReference1.HelloWorldRequest inValue = new PP4.ConsoleTest.ServiceReference1.HelloWorldRequest();
             inValue.Body = new PP4.ConsoleTest.ServiceReference1.HelloWorldRequestBody();
             return ((PP4.ConsoleTest.ServiceReference1.WebService1Soap)(this)).HelloWorldAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PP4.ConsoleTest.ServiceReference1.AddPersonResponse PP4.ConsoleTest.ServiceReference1.WebService1Soap.AddPerson(PP4.ConsoleTest.ServiceReference1.AddPersonRequest request) {
+            return base.Channel.AddPerson(request);
+        }
+        
+        public PP4.ConsoleTest.ServiceReference1.Person AddPerson(string Identification, string Name, string Mail, string Password) {
+            PP4.ConsoleTest.ServiceReference1.AddPersonRequest inValue = new PP4.ConsoleTest.ServiceReference1.AddPersonRequest();
+            inValue.Body = new PP4.ConsoleTest.ServiceReference1.AddPersonRequestBody();
+            inValue.Body.Identification = Identification;
+            inValue.Body.Name = Name;
+            inValue.Body.Mail = Mail;
+            inValue.Body.Password = Password;
+            PP4.ConsoleTest.ServiceReference1.AddPersonResponse retVal = ((PP4.ConsoleTest.ServiceReference1.WebService1Soap)(this)).AddPerson(inValue);
+            return retVal.Body.AddPersonResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PP4.ConsoleTest.ServiceReference1.AddPersonResponse> PP4.ConsoleTest.ServiceReference1.WebService1Soap.AddPersonAsync(PP4.ConsoleTest.ServiceReference1.AddPersonRequest request) {
+            return base.Channel.AddPersonAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PP4.ConsoleTest.ServiceReference1.AddPersonResponse> AddPersonAsync(string Identification, string Name, string Mail, string Password) {
+            PP4.ConsoleTest.ServiceReference1.AddPersonRequest inValue = new PP4.ConsoleTest.ServiceReference1.AddPersonRequest();
+            inValue.Body = new PP4.ConsoleTest.ServiceReference1.AddPersonRequestBody();
+            inValue.Body.Identification = Identification;
+            inValue.Body.Name = Name;
+            inValue.Body.Mail = Mail;
+            inValue.Body.Password = Password;
+            return ((PP4.ConsoleTest.ServiceReference1.WebService1Soap)(this)).AddPersonAsync(inValue);
+        }
+        
+        public void DeletePerson(int id) {
+            base.Channel.DeletePerson(id);
+        }
+        
+        public System.Threading.Tasks.Task DeletePersonAsync(int id) {
+            return base.Channel.DeletePersonAsync(id);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PP4.ConsoleTest.ServiceReference1.UpdatePersonResponse PP4.ConsoleTest.ServiceReference1.WebService1Soap.UpdatePerson(PP4.ConsoleTest.ServiceReference1.UpdatePersonRequest request) {
+            return base.Channel.UpdatePerson(request);
+        }
+        
+        public void UpdatePerson(int id, string Identification, string Name, string Mail, string Password) {
+            PP4.ConsoleTest.ServiceReference1.UpdatePersonRequest inValue = new PP4.ConsoleTest.ServiceReference1.UpdatePersonRequest();
+            inValue.Body = new PP4.ConsoleTest.ServiceReference1.UpdatePersonRequestBody();
+            inValue.Body.id = id;
+            inValue.Body.Identification = Identification;
+            inValue.Body.Name = Name;
+            inValue.Body.Mail = Mail;
+            inValue.Body.Password = Password;
+            PP4.ConsoleTest.ServiceReference1.UpdatePersonResponse retVal = ((PP4.ConsoleTest.ServiceReference1.WebService1Soap)(this)).UpdatePerson(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PP4.ConsoleTest.ServiceReference1.UpdatePersonResponse> PP4.ConsoleTest.ServiceReference1.WebService1Soap.UpdatePersonAsync(PP4.ConsoleTest.ServiceReference1.UpdatePersonRequest request) {
+            return base.Channel.UpdatePersonAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PP4.ConsoleTest.ServiceReference1.UpdatePersonResponse> UpdatePersonAsync(int id, string Identification, string Name, string Mail, string Password) {
+            PP4.ConsoleTest.ServiceReference1.UpdatePersonRequest inValue = new PP4.ConsoleTest.ServiceReference1.UpdatePersonRequest();
+            inValue.Body = new PP4.ConsoleTest.ServiceReference1.UpdatePersonRequestBody();
+            inValue.Body.id = id;
+            inValue.Body.Identification = Identification;
+            inValue.Body.Name = Name;
+            inValue.Body.Mail = Mail;
+            inValue.Body.Password = Password;
+            return ((PP4.ConsoleTest.ServiceReference1.WebService1Soap)(this)).UpdatePersonAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        PP4.ConsoleTest.ServiceReference1.FindPersonResponse PP4.ConsoleTest.ServiceReference1.WebService1Soap.FindPerson(PP4.ConsoleTest.ServiceReference1.FindPersonRequest request) {
+            return base.Channel.FindPerson(request);
+        }
+        
+        public PP4.ConsoleTest.ServiceReference1.Person FindPerson(int id) {
+            PP4.ConsoleTest.ServiceReference1.FindPersonRequest inValue = new PP4.ConsoleTest.ServiceReference1.FindPersonRequest();
+            inValue.Body = new PP4.ConsoleTest.ServiceReference1.FindPersonRequestBody();
+            inValue.Body.id = id;
+            PP4.ConsoleTest.ServiceReference1.FindPersonResponse retVal = ((PP4.ConsoleTest.ServiceReference1.WebService1Soap)(this)).FindPerson(inValue);
+            return retVal.Body.FindPersonResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<PP4.ConsoleTest.ServiceReference1.FindPersonResponse> PP4.ConsoleTest.ServiceReference1.WebService1Soap.FindPersonAsync(PP4.ConsoleTest.ServiceReference1.FindPersonRequest request) {
+            return base.Channel.FindPersonAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<PP4.ConsoleTest.ServiceReference1.FindPersonResponse> FindPersonAsync(int id) {
+            PP4.ConsoleTest.ServiceReference1.FindPersonRequest inValue = new PP4.ConsoleTest.ServiceReference1.FindPersonRequest();
+            inValue.Body = new PP4.ConsoleTest.ServiceReference1.FindPersonRequestBody();
+            inValue.Body.id = id;
+            return ((PP4.ConsoleTest.ServiceReference1.WebService1Soap)(this)).FindPersonAsync(inValue);
         }
     }
 }

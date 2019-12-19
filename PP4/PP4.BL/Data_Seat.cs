@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace PP4.BL
 
 {
-    class Data_Seats : IRepositorio<Seat>
+    public class Data_Seat : IRepositorio<Seat>
     {
         public void Delete(int IDSeat)
         {

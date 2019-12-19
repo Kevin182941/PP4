@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PP4.BL
 {
-    class Data_Room : IRepositorio<Room>
+    public class Data_Room : IRepositorio<Room>
     {
 
         #region CRUD Room

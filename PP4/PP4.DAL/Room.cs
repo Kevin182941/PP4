@@ -23,9 +23,9 @@ namespace PP4.DAL
         public bool State { get; set; }
         #endregion
 
-
+        [XmlIgnore]
         public virtual ICollection<Batch> Batches { get; set; }
-
+        [XmlIgnore]
         public virtual ICollection<Seat> Seats { get; set; }
     }
 }

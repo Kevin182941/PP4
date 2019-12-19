@@ -28,7 +28,7 @@ namespace PP4.DAL
         public decimal Price { get; set; }
 
         #endregion
-
+        [XmlIgnore]
         public virtual ICollection<Purchase_Seat> Purchase_Seats { get; set; }
     }
 }

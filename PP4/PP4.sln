@@ -9,11 +9,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PP4.BL", "PP4.BL\PP4.BL.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PP4.Entidades", "PP4.Entidades\PP4.Entidades.csproj", "{76AB9DEF-1464-42AE-ADC4-598B36D0A41D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication", "WebApplication\WebApplication.csproj", "{2C9C5FF1-1E0B-4C32-BF9B-376623E01244}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.WCF", "WebApplication\Services.WCF.csproj", "{2C9C5FF1-1E0B-4C32-BF9B-376623E01244}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PP4.ConsoleTest", "PP4.ConsoleTest\PP4.ConsoleTest.csproj", "{F86E1F61-CECD-4E15-BFD4-D2B00D2FF499}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PP4.Services", "PP4.Services\PP4.Services.csproj", "{4A682DF2-1480-40AC-AD84-2E13902CA7C4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PP4.Services.MVC", "PP4.Services\PP4.Services.MVC.csproj", "{4A682DF2-1480-40AC-AD84-2E13902CA7C4}"
 	ProjectSection(ProjectDependencies) = postProject
 		{2C9C5FF1-1E0B-4C32-BF9B-376623E01244} = {2C9C5FF1-1E0B-4C32-BF9B-376623E01244}
 	EndProjectSection
