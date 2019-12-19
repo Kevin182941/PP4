@@ -9,12 +9,15 @@ using System.Xml.Serialization;
 
 namespace PP4.DAL
 {
+
     public class Person
+
     {
         #region Attribute
 
         [Key,DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-       
+
+    
         public int ID_Person { get; set; }
         
         public string Name { get; set; }

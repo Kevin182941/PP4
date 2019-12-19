@@ -23,7 +23,7 @@ namespace PP4.DAL
         public DateTime Date_Purchase { get; set; }
 
         #endregion
-
+        [XmlIgnore]
         public virtual ICollection<Purchase_Seat> Purchase_Seats { get; set; }
     }
 

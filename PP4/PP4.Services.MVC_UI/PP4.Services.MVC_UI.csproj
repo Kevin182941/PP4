@@ -8,17 +8,17 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4A682DF2-1480-40AC-AD84-2E13902CA7C4}</ProjectGuid>
+    <ProjectGuid>{63CFCE63-74EE-49DA-AAF0-6AEB27DB181E}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PP4.Services</RootNamespace>
-    <AssemblyName>PP4.Services</AssemblyName>
+    <RootNamespace>PP4.Services.MVC_UI</RootNamespace>
+    <AssemblyName>PP4.Services.MVC_UI</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44323</IISExpressSSLPort>
+    <IISExpressSSLPort>44319</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -45,33 +45,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -137,66 +120,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Connected Services\ServiceReference1\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Controllers\BatchController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\MainController.cs" />
-    <Compile Include="Controllers\MovieController.cs" />
-    <Compile Include="Controllers\PersonController.cs" />
-    <Compile Include="Controllers\PurchaseController.cs" />
-    <Compile Include="Controllers\PurchaseSeatController.cs" />
-    <Compile Include="Controllers\RoomController.cs" />
-    <Compile Include="Controllers\ScheduleController.cs" />
-    <Compile Include="Controllers\SeatController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\ViewModels\ViewModelBatch\ListBatchViewModel.cs" />
-    <Compile Include="Models\ViewModels\ViewModelBatch\TablaViewModel.cs" />
-    <Compile Include="Models\ViewModels\ViewModelMovie\ListMovieViewModel.cs" />
-    <Compile Include="Models\ViewModels\ViewModelMovie\TablaViewModel.cs" />
-    <Compile Include="Models\ViewModels\ViewModelPerson\ListPersonViewModel.cs" />
-    <Compile Include="Models\ViewModels\ViewModelPerson\TablaViewModel.cs" />
-    <Compile Include="Models\ViewModels\ViewModelPurchase\ListPurchaseViewModel.cs" />
-    <Compile Include="Models\ViewModels\ViewModelPurchase\TablaViewModel.cs" />
-    <Compile Include="Models\ViewModels\ViewModelPurcheaseSeat\ListPurchaseSeatViewModel.cs" />
-    <Compile Include="Models\ViewModels\ViewModelPurcheaseSeat\TablaViewModel.cs" />
-    <Compile Include="Models\ViewModels\ViewModelRoom\ListRoomViewModel.cs" />
-    <Compile Include="Models\ViewModels\ViewModelRoom\TablaViewModel.cs" />
-    <Compile Include="Models\ViewModels\ViewModelSchedule\ListScheduleViewModel.cs" />
-    <Compile Include="Models\ViewModels\ViewModelSchedule\TablaViewModel.cs" />
-    <Compile Include="Models\ViewModels\ViewModelSeat\ListSeatViewModel.cs" />
-    <Compile Include="Models\ViewModels\ViewModelSeat\TablaViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Connected Services\ServiceReference1\PP4.Services.ServiceReference1.AddPersonResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiceReference1\PP4.Services.ServiceReference1.GetPersonResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiceReference1\PP4.Services.ServiceReference1.HelloWorldResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiceReference1\PP4.Services.ServiceReference1.Person.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiceReference1\PP4.Services.ServiceReference1.UpdatePersonResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <None Include="Connected Services\ServiceReference1\WebService1.disco" />
-    <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
-    <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
-    <None Include="Connected Services\ServiceReference1\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -205,12 +135,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Images\2251682.png" />
-    <Content Include="Images\6109dc9cf92600c605dd0f7a52062b0f_icon.png" />
-    <Content Include="Images\images.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Connected Services\ServiceReference1\WebService1.wsdl" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -236,34 +162,10 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Person\Index.cshtml" />
-    <Content Include="Views\Batch\Index.cshtml" />
-    <Content Include="Views\Batch\New.cshtml" />
-    <Content Include="Views\Batch\Edit.cshtml" />
-    <Content Include="Views\Movie\Index.cshtml" />
-    <Content Include="Views\Movie\New.cshtml" />
-    <Content Include="Views\Movie\Edit.cshtml" />
-    <Content Include="Views\Schedule\Index.cshtml" />
-    <Content Include="Views\Schedule\New.cshtml" />
-    <Content Include="Views\Schedule\Edit.cshtml" />
-    <Content Include="Views\Room\Index.cshtml" />
-    <Content Include="Views\Room\New.cshtml" />
-    <Content Include="Views\Room\Edit.cshtml" />
-    <Content Include="Views\Purchase\Index.cshtml" />
-    <Content Include="Views\Purchase\New.cshtml" />
-    <Content Include="Views\Main\Index.cshtml" />
-    <Content Include="Views\PurchaseSeat\Index.cshtml" />
-    <Content Include="Views\PurchaseSeat\New.cshtml" />
-    <Content Include="Views\Seat\Index.cshtml" />
-    <Content Include="Views\Seat\Edit.cshtml" />
-    <Content Include="Views\Seat\New.cshtml" />
-    <Content Include="Views\PurchaseSeat\Edit.cshtml" />
-    <Content Include="Views\Purchase\Edit.cshtml" />
-    <Content Include="Views\Person\New.cshtml" />
-    <Content Include="Views\Person\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -277,22 +179,6 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\PP4.BL\PP4.BL.csproj">
-      <Project>{1cf694d1-81b3-48b8-8866-fcc8059596a1}</Project>
-      <Name>PP4.BL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PP4.DAL\PP4.DAL.csproj">
-      <Project>{32ee26a3-02ee-4ff6-bbb9-c3c3952a1ac7}</Project>
-      <Name>PP4.DAL</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -310,9 +196,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>65403</DevelopmentServerPort>
+          <DevelopmentServerPort>61107</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44323/</IISUrl>
+          <IISUrl>https://localhost:44319/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

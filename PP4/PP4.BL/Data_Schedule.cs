@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PP4.BL
 {
-    class Data_Schedule : IRepositorio<Schedule>
+    public class Data_Schedule : IRepositorio<Schedule>
     {
 
 

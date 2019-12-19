@@ -21,6 +21,7 @@ namespace PP4.DAL
 
         #endregion
 
+        [XmlIgnore]
         public virtual ICollection<Batch> Batches { get; set; }
 
     }

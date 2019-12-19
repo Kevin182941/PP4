@@ -9,12 +9,13 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>PP4.ConsoleTest</RootNamespace>
     <AssemblyName>PP4.ConsoleTest</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -65,16 +66,28 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Connected Services\ServiceReference1\PP4.ConsoleTest.ServiceReference1.AddPersonResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\PP4.ConsoleTest.ServiceReference1.FindPersonResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReference1\PP4.ConsoleTest.ServiceReference1.HelloWorldResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\PP4.ConsoleTest.ServiceReference1.Person.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\PP4.ConsoleTest.ServiceReference1.UpdatePersonResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReference1\WebService1.wsdl" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WebApplication\WebApplication.csproj">
+    <ProjectReference Include="..\WebApplication\Services.WCF.csproj">
       <Project>{2c9c5ff1-1e0b-4c32-bf9b-376623e01244}</Project>
-      <Name>WebApplication</Name>
+      <Name>Services.WCF</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

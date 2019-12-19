@@ -16,6 +16,10 @@ namespace PP4.ConsoleTest
             WebService1SoapClient client = new  WebService1SoapClient();
 
             
+                    
+
+
+            
         }
     }
 }

@@ -13,7 +13,7 @@ namespace PP4.Services.Models.ViewModels.ViewModelSchedule
 
         [Required]
         [Display(Name = "Day")]
-        [DataType(DataType.Date )]
+        [DataType(DataType.DateTime )]
         public DateTime Day { get; set; }
 
         [Required]
