@@ -525,6 +525,96 @@ namespace WebApplication.ServiceReference1 {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Movie", Namespace="http://tempuri.org/")]
+    [System.SerializableAttribute()]
+    public partial class Movie : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int ID_MovieField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Description_MovieField;
+        
+        private int DurationField;
+        
+        private bool StateField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int ID_Movie {
+            get {
+                return this.ID_MovieField;
+            }
+            set {
+                if ((this.ID_MovieField.Equals(value) != true)) {
+                    this.ID_MovieField = value;
+                    this.RaisePropertyChanged("ID_Movie");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string Description_Movie {
+            get {
+                return this.Description_MovieField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Description_MovieField, value) != true)) {
+                    this.Description_MovieField = value;
+                    this.RaisePropertyChanged("Description_Movie");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public int Duration {
+            get {
+                return this.DurationField;
+            }
+            set {
+                if ((this.DurationField.Equals(value) != true)) {
+                    this.DurationField = value;
+                    this.RaisePropertyChanged("Duration");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public bool State {
+            get {
+                return this.StateField;
+            }
+            set {
+                if ((this.StateField.Equals(value) != true)) {
+                    this.StateField = value;
+                    this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.WebService1Soap")]
     public interface WebService1Soap {
@@ -616,6 +706,20 @@ namespace WebApplication.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeleteSchedule", ReplyAction="*")]
         System.Threading.Tasks.Task DeleteScheduleAsync(int id);
         
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento GetScheduleResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetSchedule", ReplyAction="*")]
+        WebApplication.ServiceReference1.GetScheduleResponse GetSchedule(WebApplication.ServiceReference1.GetScheduleRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetSchedule", ReplyAction="*")]
+        System.Threading.Tasks.Task<WebApplication.ServiceReference1.GetScheduleResponse> GetScheduleAsync(WebApplication.ServiceReference1.GetScheduleRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento GetAllSchedulesResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllSchedules", ReplyAction="*")]
+        WebApplication.ServiceReference1.GetAllSchedulesResponse GetAllSchedules(WebApplication.ServiceReference1.GetAllSchedulesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllSchedules", ReplyAction="*")]
+        System.Threading.Tasks.Task<WebApplication.ServiceReference1.GetAllSchedulesResponse> GetAllSchedulesAsync(WebApplication.ServiceReference1.GetAllSchedulesRequest request);
+        
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento Description_Seat del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AddSeat", ReplyAction="*")]
         WebApplication.ServiceReference1.AddSeatResponse AddSeat(WebApplication.ServiceReference1.AddSeatRequest request);
@@ -636,6 +740,20 @@ namespace WebApplication.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeleteSeat", ReplyAction="*")]
         System.Threading.Tasks.Task DeleteSeatAsync(int id);
         
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento GetSeatResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetSeat", ReplyAction="*")]
+        WebApplication.ServiceReference1.GetSeatResponse GetSeat(WebApplication.ServiceReference1.GetSeatRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetSeat", ReplyAction="*")]
+        System.Threading.Tasks.Task<WebApplication.ServiceReference1.GetSeatResponse> GetSeatAsync(WebApplication.ServiceReference1.GetSeatRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento GetAllSeatsResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllSeats", ReplyAction="*")]
+        WebApplication.ServiceReference1.GetAllSeatsResponse GetAllSeats(WebApplication.ServiceReference1.GetAllSeatsRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllSeats", ReplyAction="*")]
+        System.Threading.Tasks.Task<WebApplication.ServiceReference1.GetAllSeatsResponse> GetAllSeatsAsync(WebApplication.ServiceReference1.GetAllSeatsRequest request);
+        
         // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento AddPurchaseResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AddPurchase", ReplyAction="*")]
         WebApplication.ServiceReference1.AddPurchaseResponse AddPurchase(WebApplication.ServiceReference1.AddPurchaseRequest request);
@@ -654,6 +772,54 @@ namespace WebApplication.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeletePurchase", ReplyAction="*")]
         System.Threading.Tasks.Task DeletePurchaseAsync(int id);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento GetPurchaseResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetPurchase", ReplyAction="*")]
+        WebApplication.ServiceReference1.GetPurchaseResponse GetPurchase(WebApplication.ServiceReference1.GetPurchaseRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetPurchase", ReplyAction="*")]
+        System.Threading.Tasks.Task<WebApplication.ServiceReference1.GetPurchaseResponse> GetPurchaseAsync(WebApplication.ServiceReference1.GetPurchaseRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento GetAllPurchasesResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllPurchases", ReplyAction="*")]
+        WebApplication.ServiceReference1.GetAllPurchasesResponse GetAllPurchases(WebApplication.ServiceReference1.GetAllPurchasesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllPurchases", ReplyAction="*")]
+        System.Threading.Tasks.Task<WebApplication.ServiceReference1.GetAllPurchasesResponse> GetAllPurchasesAsync(WebApplication.ServiceReference1.GetAllPurchasesRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento Description_Movie del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AddMovie", ReplyAction="*")]
+        WebApplication.ServiceReference1.AddMovieResponse AddMovie(WebApplication.ServiceReference1.AddMovieRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AddMovie", ReplyAction="*")]
+        System.Threading.Tasks.Task<WebApplication.ServiceReference1.AddMovieResponse> AddMovieAsync(WebApplication.ServiceReference1.AddMovieRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeleteMovie", ReplyAction="*")]
+        void DeleteMovie(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/DeleteMovie", ReplyAction="*")]
+        System.Threading.Tasks.Task DeleteMovieAsync(int id);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento Description_Movie del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UpdateMovie", ReplyAction="*")]
+        WebApplication.ServiceReference1.UpdateMovieResponse UpdateMovie(WebApplication.ServiceReference1.UpdateMovieRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/UpdateMovie", ReplyAction="*")]
+        System.Threading.Tasks.Task<WebApplication.ServiceReference1.UpdateMovieResponse> UpdateMovieAsync(WebApplication.ServiceReference1.UpdateMovieRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento GetMovieResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetMovie", ReplyAction="*")]
+        WebApplication.ServiceReference1.GetMovieResponse GetMovie(WebApplication.ServiceReference1.GetMovieRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetMovie", ReplyAction="*")]
+        System.Threading.Tasks.Task<WebApplication.ServiceReference1.GetMovieResponse> GetMovieAsync(WebApplication.ServiceReference1.GetMovieRequest request);
+        
+        // CODEGEN: Se está generando un contrato de mensaje, ya que el nombre de elemento GetAllMoviesResult del espacio de nombres http://tempuri.org/ no está marcado para aceptar valores nil.
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllMovies", ReplyAction="*")]
+        WebApplication.ServiceReference1.GetAllMoviesResponse GetAllMovies(WebApplication.ServiceReference1.GetAllMoviesRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllMovies", ReplyAction="*")]
+        System.Threading.Tasks.Task<WebApplication.ServiceReference1.GetAllMoviesResponse> GetAllMoviesAsync(WebApplication.ServiceReference1.GetAllMoviesRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1312,6 +1478,135 @@ namespace WebApplication.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetScheduleRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetSchedule", Namespace="http://tempuri.org/", Order=0)]
+        public WebApplication.ServiceReference1.GetScheduleRequestBody Body;
+        
+        public GetScheduleRequest() {
+        }
+        
+        public GetScheduleRequest(WebApplication.ServiceReference1.GetScheduleRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetScheduleRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        public GetScheduleRequestBody() {
+        }
+        
+        public GetScheduleRequestBody(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetScheduleResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetScheduleResponse", Namespace="http://tempuri.org/", Order=0)]
+        public WebApplication.ServiceReference1.GetScheduleResponseBody Body;
+        
+        public GetScheduleResponse() {
+        }
+        
+        public GetScheduleResponse(WebApplication.ServiceReference1.GetScheduleResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetScheduleResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public WebApplication.ServiceReference1.Schedule GetScheduleResult;
+        
+        public GetScheduleResponseBody() {
+        }
+        
+        public GetScheduleResponseBody(WebApplication.ServiceReference1.Schedule GetScheduleResult) {
+            this.GetScheduleResult = GetScheduleResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllSchedulesRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllSchedules", Namespace="http://tempuri.org/", Order=0)]
+        public WebApplication.ServiceReference1.GetAllSchedulesRequestBody Body;
+        
+        public GetAllSchedulesRequest() {
+        }
+        
+        public GetAllSchedulesRequest(WebApplication.ServiceReference1.GetAllSchedulesRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetAllSchedulesRequestBody {
+        
+        public GetAllSchedulesRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllSchedulesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllSchedulesResponse", Namespace="http://tempuri.org/", Order=0)]
+        public WebApplication.ServiceReference1.GetAllSchedulesResponseBody Body;
+        
+        public GetAllSchedulesResponse() {
+        }
+        
+        public GetAllSchedulesResponse(WebApplication.ServiceReference1.GetAllSchedulesResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetAllSchedulesResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public WebApplication.ServiceReference1.Schedule[] GetAllSchedulesResult;
+        
+        public GetAllSchedulesResponseBody() {
+        }
+        
+        public GetAllSchedulesResponseBody(WebApplication.ServiceReference1.Schedule[] GetAllSchedulesResult) {
+            this.GetAllSchedulesResult = GetAllSchedulesResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class AddSeatRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="AddSeat", Namespace="http://tempuri.org/", Order=0)]
@@ -1477,6 +1772,135 @@ namespace WebApplication.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetSeatRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetSeat", Namespace="http://tempuri.org/", Order=0)]
+        public WebApplication.ServiceReference1.GetSeatRequestBody Body;
+        
+        public GetSeatRequest() {
+        }
+        
+        public GetSeatRequest(WebApplication.ServiceReference1.GetSeatRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetSeatRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        public GetSeatRequestBody() {
+        }
+        
+        public GetSeatRequestBody(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetSeatResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetSeatResponse", Namespace="http://tempuri.org/", Order=0)]
+        public WebApplication.ServiceReference1.GetSeatResponseBody Body;
+        
+        public GetSeatResponse() {
+        }
+        
+        public GetSeatResponse(WebApplication.ServiceReference1.GetSeatResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetSeatResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public WebApplication.ServiceReference1.Seat GetSeatResult;
+        
+        public GetSeatResponseBody() {
+        }
+        
+        public GetSeatResponseBody(WebApplication.ServiceReference1.Seat GetSeatResult) {
+            this.GetSeatResult = GetSeatResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllSeatsRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllSeats", Namespace="http://tempuri.org/", Order=0)]
+        public WebApplication.ServiceReference1.GetAllSeatsRequestBody Body;
+        
+        public GetAllSeatsRequest() {
+        }
+        
+        public GetAllSeatsRequest(WebApplication.ServiceReference1.GetAllSeatsRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetAllSeatsRequestBody {
+        
+        public GetAllSeatsRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllSeatsResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllSeatsResponse", Namespace="http://tempuri.org/", Order=0)]
+        public WebApplication.ServiceReference1.GetAllSeatsResponseBody Body;
+        
+        public GetAllSeatsResponse() {
+        }
+        
+        public GetAllSeatsResponse(WebApplication.ServiceReference1.GetAllSeatsResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetAllSeatsResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public WebApplication.ServiceReference1.Seat[] GetAllSeatsResult;
+        
+        public GetAllSeatsResponseBody() {
+        }
+        
+        public GetAllSeatsResponseBody(WebApplication.ServiceReference1.Seat[] GetAllSeatsResult) {
+            this.GetAllSeatsResult = GetAllSeatsResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class AddPurchaseRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Name="AddPurchase", Namespace="http://tempuri.org/", Order=0)]
@@ -1546,6 +1970,417 @@ namespace WebApplication.ServiceReference1 {
         
         public AddPurchaseResponseBody(WebApplication.ServiceReference1.Purchase AddPurchaseResult) {
             this.AddPurchaseResult = AddPurchaseResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetPurchaseRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetPurchase", Namespace="http://tempuri.org/", Order=0)]
+        public WebApplication.ServiceReference1.GetPurchaseRequestBody Body;
+        
+        public GetPurchaseRequest() {
+        }
+        
+        public GetPurchaseRequest(WebApplication.ServiceReference1.GetPurchaseRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetPurchaseRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        public GetPurchaseRequestBody() {
+        }
+        
+        public GetPurchaseRequestBody(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetPurchaseResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetPurchaseResponse", Namespace="http://tempuri.org/", Order=0)]
+        public WebApplication.ServiceReference1.GetPurchaseResponseBody Body;
+        
+        public GetPurchaseResponse() {
+        }
+        
+        public GetPurchaseResponse(WebApplication.ServiceReference1.GetPurchaseResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetPurchaseResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public WebApplication.ServiceReference1.Purchase GetPurchaseResult;
+        
+        public GetPurchaseResponseBody() {
+        }
+        
+        public GetPurchaseResponseBody(WebApplication.ServiceReference1.Purchase GetPurchaseResult) {
+            this.GetPurchaseResult = GetPurchaseResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllPurchasesRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllPurchases", Namespace="http://tempuri.org/", Order=0)]
+        public WebApplication.ServiceReference1.GetAllPurchasesRequestBody Body;
+        
+        public GetAllPurchasesRequest() {
+        }
+        
+        public GetAllPurchasesRequest(WebApplication.ServiceReference1.GetAllPurchasesRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetAllPurchasesRequestBody {
+        
+        public GetAllPurchasesRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllPurchasesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllPurchasesResponse", Namespace="http://tempuri.org/", Order=0)]
+        public WebApplication.ServiceReference1.GetAllPurchasesResponseBody Body;
+        
+        public GetAllPurchasesResponse() {
+        }
+        
+        public GetAllPurchasesResponse(WebApplication.ServiceReference1.GetAllPurchasesResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetAllPurchasesResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public WebApplication.ServiceReference1.Purchase[] GetAllPurchasesResult;
+        
+        public GetAllPurchasesResponseBody() {
+        }
+        
+        public GetAllPurchasesResponseBody(WebApplication.ServiceReference1.Purchase[] GetAllPurchasesResult) {
+            this.GetAllPurchasesResult = GetAllPurchasesResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AddMovieRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AddMovie", Namespace="http://tempuri.org/", Order=0)]
+        public WebApplication.ServiceReference1.AddMovieRequestBody Body;
+        
+        public AddMovieRequest() {
+        }
+        
+        public AddMovieRequest(WebApplication.ServiceReference1.AddMovieRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AddMovieRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int ID_Movie;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string Description_Movie;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public int Duration;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public bool State;
+        
+        public AddMovieRequestBody() {
+        }
+        
+        public AddMovieRequestBody(int ID_Movie, string Description_Movie, int Duration, bool State) {
+            this.ID_Movie = ID_Movie;
+            this.Description_Movie = Description_Movie;
+            this.Duration = Duration;
+            this.State = State;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AddMovieResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AddMovieResponse", Namespace="http://tempuri.org/", Order=0)]
+        public WebApplication.ServiceReference1.AddMovieResponseBody Body;
+        
+        public AddMovieResponse() {
+        }
+        
+        public AddMovieResponse(WebApplication.ServiceReference1.AddMovieResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AddMovieResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public WebApplication.ServiceReference1.Movie AddMovieResult;
+        
+        public AddMovieResponseBody() {
+        }
+        
+        public AddMovieResponseBody(WebApplication.ServiceReference1.Movie AddMovieResult) {
+            this.AddMovieResult = AddMovieResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class UpdateMovieRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateMovie", Namespace="http://tempuri.org/", Order=0)]
+        public WebApplication.ServiceReference1.UpdateMovieRequestBody Body;
+        
+        public UpdateMovieRequest() {
+        }
+        
+        public UpdateMovieRequest(WebApplication.ServiceReference1.UpdateMovieRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class UpdateMovieRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int ID_Movie;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string Description_Movie;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public int Duration;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public bool State;
+        
+        public UpdateMovieRequestBody() {
+        }
+        
+        public UpdateMovieRequestBody(int ID_Movie, string Description_Movie, int Duration, bool State) {
+            this.ID_Movie = ID_Movie;
+            this.Description_Movie = Description_Movie;
+            this.Duration = Duration;
+            this.State = State;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class UpdateMovieResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UpdateMovieResponse", Namespace="http://tempuri.org/", Order=0)]
+        public WebApplication.ServiceReference1.UpdateMovieResponseBody Body;
+        
+        public UpdateMovieResponse() {
+        }
+        
+        public UpdateMovieResponse(WebApplication.ServiceReference1.UpdateMovieResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class UpdateMovieResponseBody {
+        
+        public UpdateMovieResponseBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetMovieRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetMovie", Namespace="http://tempuri.org/", Order=0)]
+        public WebApplication.ServiceReference1.GetMovieRequestBody Body;
+        
+        public GetMovieRequest() {
+        }
+        
+        public GetMovieRequest(WebApplication.ServiceReference1.GetMovieRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetMovieRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int id;
+        
+        public GetMovieRequestBody() {
+        }
+        
+        public GetMovieRequestBody(int id) {
+            this.id = id;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetMovieResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetMovieResponse", Namespace="http://tempuri.org/", Order=0)]
+        public WebApplication.ServiceReference1.GetMovieResponseBody Body;
+        
+        public GetMovieResponse() {
+        }
+        
+        public GetMovieResponse(WebApplication.ServiceReference1.GetMovieResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetMovieResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public WebApplication.ServiceReference1.Movie GetMovieResult;
+        
+        public GetMovieResponseBody() {
+        }
+        
+        public GetMovieResponseBody(WebApplication.ServiceReference1.Movie GetMovieResult) {
+            this.GetMovieResult = GetMovieResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllMoviesRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllMovies", Namespace="http://tempuri.org/", Order=0)]
+        public WebApplication.ServiceReference1.GetAllMoviesRequestBody Body;
+        
+        public GetAllMoviesRequest() {
+        }
+        
+        public GetAllMoviesRequest(WebApplication.ServiceReference1.GetAllMoviesRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute()]
+    public partial class GetAllMoviesRequestBody {
+        
+        public GetAllMoviesRequestBody() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetAllMoviesResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetAllMoviesResponse", Namespace="http://tempuri.org/", Order=0)]
+        public WebApplication.ServiceReference1.GetAllMoviesResponseBody Body;
+        
+        public GetAllMoviesResponse() {
+        }
+        
+        public GetAllMoviesResponse(WebApplication.ServiceReference1.GetAllMoviesResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class GetAllMoviesResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public WebApplication.ServiceReference1.Movie[] GetAllMoviesResult;
+        
+        public GetAllMoviesResponseBody() {
+        }
+        
+        public GetAllMoviesResponseBody(WebApplication.ServiceReference1.Movie[] GetAllMoviesResult) {
+            this.GetAllMoviesResult = GetAllMoviesResult;
         }
     }
     
@@ -1862,6 +2697,54 @@ namespace WebApplication.ServiceReference1 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WebApplication.ServiceReference1.GetScheduleResponse WebApplication.ServiceReference1.WebService1Soap.GetSchedule(WebApplication.ServiceReference1.GetScheduleRequest request) {
+            return base.Channel.GetSchedule(request);
+        }
+        
+        public WebApplication.ServiceReference1.Schedule GetSchedule(int id) {
+            WebApplication.ServiceReference1.GetScheduleRequest inValue = new WebApplication.ServiceReference1.GetScheduleRequest();
+            inValue.Body = new WebApplication.ServiceReference1.GetScheduleRequestBody();
+            inValue.Body.id = id;
+            WebApplication.ServiceReference1.GetScheduleResponse retVal = ((WebApplication.ServiceReference1.WebService1Soap)(this)).GetSchedule(inValue);
+            return retVal.Body.GetScheduleResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WebApplication.ServiceReference1.GetScheduleResponse> WebApplication.ServiceReference1.WebService1Soap.GetScheduleAsync(WebApplication.ServiceReference1.GetScheduleRequest request) {
+            return base.Channel.GetScheduleAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WebApplication.ServiceReference1.GetScheduleResponse> GetScheduleAsync(int id) {
+            WebApplication.ServiceReference1.GetScheduleRequest inValue = new WebApplication.ServiceReference1.GetScheduleRequest();
+            inValue.Body = new WebApplication.ServiceReference1.GetScheduleRequestBody();
+            inValue.Body.id = id;
+            return ((WebApplication.ServiceReference1.WebService1Soap)(this)).GetScheduleAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WebApplication.ServiceReference1.GetAllSchedulesResponse WebApplication.ServiceReference1.WebService1Soap.GetAllSchedules(WebApplication.ServiceReference1.GetAllSchedulesRequest request) {
+            return base.Channel.GetAllSchedules(request);
+        }
+        
+        public WebApplication.ServiceReference1.Schedule[] GetAllSchedules() {
+            WebApplication.ServiceReference1.GetAllSchedulesRequest inValue = new WebApplication.ServiceReference1.GetAllSchedulesRequest();
+            inValue.Body = new WebApplication.ServiceReference1.GetAllSchedulesRequestBody();
+            WebApplication.ServiceReference1.GetAllSchedulesResponse retVal = ((WebApplication.ServiceReference1.WebService1Soap)(this)).GetAllSchedules(inValue);
+            return retVal.Body.GetAllSchedulesResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WebApplication.ServiceReference1.GetAllSchedulesResponse> WebApplication.ServiceReference1.WebService1Soap.GetAllSchedulesAsync(WebApplication.ServiceReference1.GetAllSchedulesRequest request) {
+            return base.Channel.GetAllSchedulesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WebApplication.ServiceReference1.GetAllSchedulesResponse> GetAllSchedulesAsync() {
+            WebApplication.ServiceReference1.GetAllSchedulesRequest inValue = new WebApplication.ServiceReference1.GetAllSchedulesRequest();
+            inValue.Body = new WebApplication.ServiceReference1.GetAllSchedulesRequestBody();
+            return ((WebApplication.ServiceReference1.WebService1Soap)(this)).GetAllSchedulesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         WebApplication.ServiceReference1.AddSeatResponse WebApplication.ServiceReference1.WebService1Soap.AddSeat(WebApplication.ServiceReference1.AddSeatRequest request) {
             return base.Channel.AddSeat(request);
         }
@@ -1937,6 +2820,54 @@ namespace WebApplication.ServiceReference1 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WebApplication.ServiceReference1.GetSeatResponse WebApplication.ServiceReference1.WebService1Soap.GetSeat(WebApplication.ServiceReference1.GetSeatRequest request) {
+            return base.Channel.GetSeat(request);
+        }
+        
+        public WebApplication.ServiceReference1.Seat GetSeat(int id) {
+            WebApplication.ServiceReference1.GetSeatRequest inValue = new WebApplication.ServiceReference1.GetSeatRequest();
+            inValue.Body = new WebApplication.ServiceReference1.GetSeatRequestBody();
+            inValue.Body.id = id;
+            WebApplication.ServiceReference1.GetSeatResponse retVal = ((WebApplication.ServiceReference1.WebService1Soap)(this)).GetSeat(inValue);
+            return retVal.Body.GetSeatResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WebApplication.ServiceReference1.GetSeatResponse> WebApplication.ServiceReference1.WebService1Soap.GetSeatAsync(WebApplication.ServiceReference1.GetSeatRequest request) {
+            return base.Channel.GetSeatAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WebApplication.ServiceReference1.GetSeatResponse> GetSeatAsync(int id) {
+            WebApplication.ServiceReference1.GetSeatRequest inValue = new WebApplication.ServiceReference1.GetSeatRequest();
+            inValue.Body = new WebApplication.ServiceReference1.GetSeatRequestBody();
+            inValue.Body.id = id;
+            return ((WebApplication.ServiceReference1.WebService1Soap)(this)).GetSeatAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WebApplication.ServiceReference1.GetAllSeatsResponse WebApplication.ServiceReference1.WebService1Soap.GetAllSeats(WebApplication.ServiceReference1.GetAllSeatsRequest request) {
+            return base.Channel.GetAllSeats(request);
+        }
+        
+        public WebApplication.ServiceReference1.Seat[] GetAllSeats() {
+            WebApplication.ServiceReference1.GetAllSeatsRequest inValue = new WebApplication.ServiceReference1.GetAllSeatsRequest();
+            inValue.Body = new WebApplication.ServiceReference1.GetAllSeatsRequestBody();
+            WebApplication.ServiceReference1.GetAllSeatsResponse retVal = ((WebApplication.ServiceReference1.WebService1Soap)(this)).GetAllSeats(inValue);
+            return retVal.Body.GetAllSeatsResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WebApplication.ServiceReference1.GetAllSeatsResponse> WebApplication.ServiceReference1.WebService1Soap.GetAllSeatsAsync(WebApplication.ServiceReference1.GetAllSeatsRequest request) {
+            return base.Channel.GetAllSeatsAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WebApplication.ServiceReference1.GetAllSeatsResponse> GetAllSeatsAsync() {
+            WebApplication.ServiceReference1.GetAllSeatsRequest inValue = new WebApplication.ServiceReference1.GetAllSeatsRequest();
+            inValue.Body = new WebApplication.ServiceReference1.GetAllSeatsRequestBody();
+            return ((WebApplication.ServiceReference1.WebService1Soap)(this)).GetAllSeatsAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         WebApplication.ServiceReference1.AddPurchaseResponse WebApplication.ServiceReference1.WebService1Soap.AddPurchase(WebApplication.ServiceReference1.AddPurchaseRequest request) {
             return base.Channel.AddPurchase(request);
         }
@@ -1979,6 +2910,171 @@ namespace WebApplication.ServiceReference1 {
         
         public System.Threading.Tasks.Task DeletePurchaseAsync(int id) {
             return base.Channel.DeletePurchaseAsync(id);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WebApplication.ServiceReference1.GetPurchaseResponse WebApplication.ServiceReference1.WebService1Soap.GetPurchase(WebApplication.ServiceReference1.GetPurchaseRequest request) {
+            return base.Channel.GetPurchase(request);
+        }
+        
+        public WebApplication.ServiceReference1.Purchase GetPurchase(int id) {
+            WebApplication.ServiceReference1.GetPurchaseRequest inValue = new WebApplication.ServiceReference1.GetPurchaseRequest();
+            inValue.Body = new WebApplication.ServiceReference1.GetPurchaseRequestBody();
+            inValue.Body.id = id;
+            WebApplication.ServiceReference1.GetPurchaseResponse retVal = ((WebApplication.ServiceReference1.WebService1Soap)(this)).GetPurchase(inValue);
+            return retVal.Body.GetPurchaseResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WebApplication.ServiceReference1.GetPurchaseResponse> WebApplication.ServiceReference1.WebService1Soap.GetPurchaseAsync(WebApplication.ServiceReference1.GetPurchaseRequest request) {
+            return base.Channel.GetPurchaseAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WebApplication.ServiceReference1.GetPurchaseResponse> GetPurchaseAsync(int id) {
+            WebApplication.ServiceReference1.GetPurchaseRequest inValue = new WebApplication.ServiceReference1.GetPurchaseRequest();
+            inValue.Body = new WebApplication.ServiceReference1.GetPurchaseRequestBody();
+            inValue.Body.id = id;
+            return ((WebApplication.ServiceReference1.WebService1Soap)(this)).GetPurchaseAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WebApplication.ServiceReference1.GetAllPurchasesResponse WebApplication.ServiceReference1.WebService1Soap.GetAllPurchases(WebApplication.ServiceReference1.GetAllPurchasesRequest request) {
+            return base.Channel.GetAllPurchases(request);
+        }
+        
+        public WebApplication.ServiceReference1.Purchase[] GetAllPurchases() {
+            WebApplication.ServiceReference1.GetAllPurchasesRequest inValue = new WebApplication.ServiceReference1.GetAllPurchasesRequest();
+            inValue.Body = new WebApplication.ServiceReference1.GetAllPurchasesRequestBody();
+            WebApplication.ServiceReference1.GetAllPurchasesResponse retVal = ((WebApplication.ServiceReference1.WebService1Soap)(this)).GetAllPurchases(inValue);
+            return retVal.Body.GetAllPurchasesResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WebApplication.ServiceReference1.GetAllPurchasesResponse> WebApplication.ServiceReference1.WebService1Soap.GetAllPurchasesAsync(WebApplication.ServiceReference1.GetAllPurchasesRequest request) {
+            return base.Channel.GetAllPurchasesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WebApplication.ServiceReference1.GetAllPurchasesResponse> GetAllPurchasesAsync() {
+            WebApplication.ServiceReference1.GetAllPurchasesRequest inValue = new WebApplication.ServiceReference1.GetAllPurchasesRequest();
+            inValue.Body = new WebApplication.ServiceReference1.GetAllPurchasesRequestBody();
+            return ((WebApplication.ServiceReference1.WebService1Soap)(this)).GetAllPurchasesAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WebApplication.ServiceReference1.AddMovieResponse WebApplication.ServiceReference1.WebService1Soap.AddMovie(WebApplication.ServiceReference1.AddMovieRequest request) {
+            return base.Channel.AddMovie(request);
+        }
+        
+        public WebApplication.ServiceReference1.Movie AddMovie(int ID_Movie, string Description_Movie, int Duration, bool State) {
+            WebApplication.ServiceReference1.AddMovieRequest inValue = new WebApplication.ServiceReference1.AddMovieRequest();
+            inValue.Body = new WebApplication.ServiceReference1.AddMovieRequestBody();
+            inValue.Body.ID_Movie = ID_Movie;
+            inValue.Body.Description_Movie = Description_Movie;
+            inValue.Body.Duration = Duration;
+            inValue.Body.State = State;
+            WebApplication.ServiceReference1.AddMovieResponse retVal = ((WebApplication.ServiceReference1.WebService1Soap)(this)).AddMovie(inValue);
+            return retVal.Body.AddMovieResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WebApplication.ServiceReference1.AddMovieResponse> WebApplication.ServiceReference1.WebService1Soap.AddMovieAsync(WebApplication.ServiceReference1.AddMovieRequest request) {
+            return base.Channel.AddMovieAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WebApplication.ServiceReference1.AddMovieResponse> AddMovieAsync(int ID_Movie, string Description_Movie, int Duration, bool State) {
+            WebApplication.ServiceReference1.AddMovieRequest inValue = new WebApplication.ServiceReference1.AddMovieRequest();
+            inValue.Body = new WebApplication.ServiceReference1.AddMovieRequestBody();
+            inValue.Body.ID_Movie = ID_Movie;
+            inValue.Body.Description_Movie = Description_Movie;
+            inValue.Body.Duration = Duration;
+            inValue.Body.State = State;
+            return ((WebApplication.ServiceReference1.WebService1Soap)(this)).AddMovieAsync(inValue);
+        }
+        
+        public void DeleteMovie(int id) {
+            base.Channel.DeleteMovie(id);
+        }
+        
+        public System.Threading.Tasks.Task DeleteMovieAsync(int id) {
+            return base.Channel.DeleteMovieAsync(id);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WebApplication.ServiceReference1.UpdateMovieResponse WebApplication.ServiceReference1.WebService1Soap.UpdateMovie(WebApplication.ServiceReference1.UpdateMovieRequest request) {
+            return base.Channel.UpdateMovie(request);
+        }
+        
+        public void UpdateMovie(int ID_Movie, string Description_Movie, int Duration, bool State) {
+            WebApplication.ServiceReference1.UpdateMovieRequest inValue = new WebApplication.ServiceReference1.UpdateMovieRequest();
+            inValue.Body = new WebApplication.ServiceReference1.UpdateMovieRequestBody();
+            inValue.Body.ID_Movie = ID_Movie;
+            inValue.Body.Description_Movie = Description_Movie;
+            inValue.Body.Duration = Duration;
+            inValue.Body.State = State;
+            WebApplication.ServiceReference1.UpdateMovieResponse retVal = ((WebApplication.ServiceReference1.WebService1Soap)(this)).UpdateMovie(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WebApplication.ServiceReference1.UpdateMovieResponse> WebApplication.ServiceReference1.WebService1Soap.UpdateMovieAsync(WebApplication.ServiceReference1.UpdateMovieRequest request) {
+            return base.Channel.UpdateMovieAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WebApplication.ServiceReference1.UpdateMovieResponse> UpdateMovieAsync(int ID_Movie, string Description_Movie, int Duration, bool State) {
+            WebApplication.ServiceReference1.UpdateMovieRequest inValue = new WebApplication.ServiceReference1.UpdateMovieRequest();
+            inValue.Body = new WebApplication.ServiceReference1.UpdateMovieRequestBody();
+            inValue.Body.ID_Movie = ID_Movie;
+            inValue.Body.Description_Movie = Description_Movie;
+            inValue.Body.Duration = Duration;
+            inValue.Body.State = State;
+            return ((WebApplication.ServiceReference1.WebService1Soap)(this)).UpdateMovieAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WebApplication.ServiceReference1.GetMovieResponse WebApplication.ServiceReference1.WebService1Soap.GetMovie(WebApplication.ServiceReference1.GetMovieRequest request) {
+            return base.Channel.GetMovie(request);
+        }
+        
+        public WebApplication.ServiceReference1.Movie GetMovie(int id) {
+            WebApplication.ServiceReference1.GetMovieRequest inValue = new WebApplication.ServiceReference1.GetMovieRequest();
+            inValue.Body = new WebApplication.ServiceReference1.GetMovieRequestBody();
+            inValue.Body.id = id;
+            WebApplication.ServiceReference1.GetMovieResponse retVal = ((WebApplication.ServiceReference1.WebService1Soap)(this)).GetMovie(inValue);
+            return retVal.Body.GetMovieResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WebApplication.ServiceReference1.GetMovieResponse> WebApplication.ServiceReference1.WebService1Soap.GetMovieAsync(WebApplication.ServiceReference1.GetMovieRequest request) {
+            return base.Channel.GetMovieAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WebApplication.ServiceReference1.GetMovieResponse> GetMovieAsync(int id) {
+            WebApplication.ServiceReference1.GetMovieRequest inValue = new WebApplication.ServiceReference1.GetMovieRequest();
+            inValue.Body = new WebApplication.ServiceReference1.GetMovieRequestBody();
+            inValue.Body.id = id;
+            return ((WebApplication.ServiceReference1.WebService1Soap)(this)).GetMovieAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        WebApplication.ServiceReference1.GetAllMoviesResponse WebApplication.ServiceReference1.WebService1Soap.GetAllMovies(WebApplication.ServiceReference1.GetAllMoviesRequest request) {
+            return base.Channel.GetAllMovies(request);
+        }
+        
+        public WebApplication.ServiceReference1.Movie[] GetAllMovies() {
+            WebApplication.ServiceReference1.GetAllMoviesRequest inValue = new WebApplication.ServiceReference1.GetAllMoviesRequest();
+            inValue.Body = new WebApplication.ServiceReference1.GetAllMoviesRequestBody();
+            WebApplication.ServiceReference1.GetAllMoviesResponse retVal = ((WebApplication.ServiceReference1.WebService1Soap)(this)).GetAllMovies(inValue);
+            return retVal.Body.GetAllMoviesResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<WebApplication.ServiceReference1.GetAllMoviesResponse> WebApplication.ServiceReference1.WebService1Soap.GetAllMoviesAsync(WebApplication.ServiceReference1.GetAllMoviesRequest request) {
+            return base.Channel.GetAllMoviesAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<WebApplication.ServiceReference1.GetAllMoviesResponse> GetAllMoviesAsync() {
+            WebApplication.ServiceReference1.GetAllMoviesRequest inValue = new WebApplication.ServiceReference1.GetAllMoviesRequest();
+            inValue.Body = new WebApplication.ServiceReference1.GetAllMoviesRequestBody();
+            return ((WebApplication.ServiceReference1.WebService1Soap)(this)).GetAllMoviesAsync(inValue);
         }
     }
 }

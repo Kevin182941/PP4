@@ -330,8 +330,67 @@ namespace WebApplication
 
         }
 
-        ////////////////////////////////////////////Purchase_Seat////////////////////////////////////////////////////////////
+        ////////////////////////////////////////////Movie////////////////////////////////////////////////////////////
 
+
+        [WebMethod]
+        public Movie AddMovie(int ID_Movie, string Description_Movie, int Duration, bool State)
+        {
+            Data_Movies data_Movies = new Data_Movies();
+            var movie = new Movie();
+            movie.ID_Movie = ID_Movie;
+            movie.Description_Movie = Description_Movie;
+            movie.Duration = Duration;
+            movie.State = State;
+
+            data_Movies.Insert(movie);
+
+
+            return movie;
+
+        }
+
+        [WebMethod]
+        public void DeleteMovie(int id)
+        {
+            Data_Movies data_Movies = new Data_Movies();
+            data_Movies.Delete(id);
+        }
+
+
+        [WebMethod]
+        public void UpdateMovie(int ID_Movie, string Description_Movie, int Duration, bool State)
+        {
+            Data_Movies data_Movies = new Data_Movies();
+            var movie = new Movie();
+            movie.ID_Movie = ID_Movie;
+            movie.Description_Movie = Description_Movie;
+            movie.Duration = Duration;
+            movie.State = State;
+
+            data_Movies.Update(movie);
+
+        }
+
+        [WebMethod]
+        public Movie GetMovie(int id)
+        {
+            Data_Movies data_Movies = new Data_Movies();
+            var movie = data_Movies.GetrById(id);
+            return movie;
+
+        }
+
+        [WebMethod]
+        public List<Movie> GetAllMovies()
+        {
+            using (DBContextCF context = new DBContextCF())
+            {
+                var movie = context.Movies.ToList();
+                return movie;
+            }
+
+        }
     }
 
 }

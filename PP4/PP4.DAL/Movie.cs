@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace PP4.DAL
 {
@@ -24,6 +25,7 @@ namespace PP4.DAL
 
         #endregion
 
+        [XmlIgnore]
         public virtual ICollection<Batch> Batches { get; set; }
 
     }

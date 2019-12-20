@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PP4.BL
 {
-    class Data_Movies : IRepositorio<Movie>
+    public class Data_Movies : IRepositorio<Movie>
     {
 
         #region CRUD Movies

@@ -207,6 +207,35 @@
       <s:element name="DeleteScheduleResponse">
         <s:complexType />
       </s:element>
+      <s:element name="GetSchedule">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScheduleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetScheduleResult" type="tns:Schedule" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllSchedules">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllSchedulesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllSchedulesResult" type="tns:ArrayOfSchedule" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSchedule">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Schedule" nillable="true" type="tns:Schedule" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="AddSeat">
         <s:complexType>
           <s:sequence>
@@ -260,6 +289,35 @@
       <s:element name="DeleteSeatResponse">
         <s:complexType />
       </s:element>
+      <s:element name="GetSeat">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSeatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSeatResult" type="tns:Seat" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllSeats">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllSeatsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllSeatsResult" type="tns:ArrayOfSeat" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSeat">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Seat" nillable="true" type="tns:Seat" />
+        </s:sequence>
+      </s:complexType>
       <s:element name="AddPurchase">
         <s:complexType>
           <s:sequence>
@@ -307,6 +365,112 @@
       <s:element name="DeletePurchaseResponse">
         <s:complexType />
       </s:element>
+      <s:element name="GetPurchase">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPurchaseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPurchaseResult" type="tns:Purchase" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllPurchases">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllPurchasesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllPurchasesResult" type="tns:ArrayOfPurchase" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPurchase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Purchase" nillable="true" type="tns:Purchase" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddMovie">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID_Movie" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Description_Movie" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Duration" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="State" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddMovieResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddMovieResult" type="tns:Movie" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Movie">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID_Movie" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description_Movie" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Duration" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="State" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DeleteMovie">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteMovieResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateMovie">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ID_Movie" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Description_Movie" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Duration" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="State" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateMovieResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMovie">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMovieResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMovieResult" type="tns:Movie" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllMovies">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllMoviesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllMoviesResult" type="tns:ArrayOfMovie" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMovie">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Movie" nillable="true" type="tns:Movie" />
+        </s:sequence>
+      </s:complexType>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="AddPersonSoapIn">
@@ -387,6 +551,18 @@
   <wsdl:message name="DeleteScheduleSoapOut">
     <wsdl:part name="parameters" element="tns:DeleteScheduleResponse" />
   </wsdl:message>
+  <wsdl:message name="GetScheduleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSchedule" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSchedulesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllSchedules" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSchedulesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllSchedulesResponse" />
+  </wsdl:message>
   <wsdl:message name="AddSeatSoapIn">
     <wsdl:part name="parameters" element="tns:AddSeat" />
   </wsdl:message>
@@ -405,6 +581,18 @@
   <wsdl:message name="DeleteSeatSoapOut">
     <wsdl:part name="parameters" element="tns:DeleteSeatResponse" />
   </wsdl:message>
+  <wsdl:message name="GetSeatSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSeat" />
+  </wsdl:message>
+  <wsdl:message name="GetSeatSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSeatsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllSeats" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSeatsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllSeatsResponse" />
+  </wsdl:message>
   <wsdl:message name="AddPurchaseSoapIn">
     <wsdl:part name="parameters" element="tns:AddPurchase" />
   </wsdl:message>
@@ -422,6 +610,48 @@
   </wsdl:message>
   <wsdl:message name="DeletePurchaseSoapOut">
     <wsdl:part name="parameters" element="tns:DeletePurchaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPurchaseSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPurchase" />
+  </wsdl:message>
+  <wsdl:message name="GetPurchaseSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPurchaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPurchasesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllPurchases" />
+  </wsdl:message>
+  <wsdl:message name="GetAllPurchasesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllPurchasesResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddMovieSoapIn">
+    <wsdl:part name="parameters" element="tns:AddMovie" />
+  </wsdl:message>
+  <wsdl:message name="AddMovieSoapOut">
+    <wsdl:part name="parameters" element="tns:AddMovieResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMovieSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteMovie" />
+  </wsdl:message>
+  <wsdl:message name="DeleteMovieSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteMovieResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMovieSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateMovie" />
+  </wsdl:message>
+  <wsdl:message name="UpdateMovieSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateMovieResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMovieSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMovie" />
+  </wsdl:message>
+  <wsdl:message name="GetMovieSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMovieResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMoviesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllMovies" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMoviesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllMoviesResponse" />
   </wsdl:message>
   <wsdl:portType name="WebService1Soap">
     <wsdl:operation name="AddPerson">
@@ -476,6 +706,14 @@
       <wsdl:input message="tns:DeleteScheduleSoapIn" />
       <wsdl:output message="tns:DeleteScheduleSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetSchedule">
+      <wsdl:input message="tns:GetScheduleSoapIn" />
+      <wsdl:output message="tns:GetScheduleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSchedules">
+      <wsdl:input message="tns:GetAllSchedulesSoapIn" />
+      <wsdl:output message="tns:GetAllSchedulesSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="AddSeat">
       <wsdl:input message="tns:AddSeatSoapIn" />
       <wsdl:output message="tns:AddSeatSoapOut" />
@@ -488,6 +726,14 @@
       <wsdl:input message="tns:DeleteSeatSoapIn" />
       <wsdl:output message="tns:DeleteSeatSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetSeat">
+      <wsdl:input message="tns:GetSeatSoapIn" />
+      <wsdl:output message="tns:GetSeatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSeats">
+      <wsdl:input message="tns:GetAllSeatsSoapIn" />
+      <wsdl:output message="tns:GetAllSeatsSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="AddPurchase">
       <wsdl:input message="tns:AddPurchaseSoapIn" />
       <wsdl:output message="tns:AddPurchaseSoapOut" />
@@ -499,6 +745,34 @@
     <wsdl:operation name="DeletePurchase">
       <wsdl:input message="tns:DeletePurchaseSoapIn" />
       <wsdl:output message="tns:DeletePurchaseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPurchase">
+      <wsdl:input message="tns:GetPurchaseSoapIn" />
+      <wsdl:output message="tns:GetPurchaseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPurchases">
+      <wsdl:input message="tns:GetAllPurchasesSoapIn" />
+      <wsdl:output message="tns:GetAllPurchasesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMovie">
+      <wsdl:input message="tns:AddMovieSoapIn" />
+      <wsdl:output message="tns:AddMovieSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMovie">
+      <wsdl:input message="tns:DeleteMovieSoapIn" />
+      <wsdl:output message="tns:DeleteMovieSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMovie">
+      <wsdl:input message="tns:UpdateMovieSoapIn" />
+      <wsdl:output message="tns:UpdateMovieSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMovie">
+      <wsdl:input message="tns:GetMovieSoapIn" />
+      <wsdl:output message="tns:GetMovieSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMovies">
+      <wsdl:input message="tns:GetAllMoviesSoapIn" />
+      <wsdl:output message="tns:GetAllMoviesSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
@@ -620,6 +894,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetSchedule">
+      <soap:operation soapAction="http://tempuri.org/GetSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSchedules">
+      <soap:operation soapAction="http://tempuri.org/GetAllSchedules" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="AddSeat">
       <soap:operation soapAction="http://tempuri.org/AddSeat" style="document" />
       <wsdl:input>
@@ -647,6 +939,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetSeat">
+      <soap:operation soapAction="http://tempuri.org/GetSeat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSeats">
+      <soap:operation soapAction="http://tempuri.org/GetAllSeats" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="AddPurchase">
       <soap:operation soapAction="http://tempuri.org/AddPurchase" style="document" />
       <wsdl:input>
@@ -667,6 +977,69 @@
     </wsdl:operation>
     <wsdl:operation name="DeletePurchase">
       <soap:operation soapAction="http://tempuri.org/DeletePurchase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPurchase">
+      <soap:operation soapAction="http://tempuri.org/GetPurchase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPurchases">
+      <soap:operation soapAction="http://tempuri.org/GetAllPurchases" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMovie">
+      <soap:operation soapAction="http://tempuri.org/AddMovie" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMovie">
+      <soap:operation soapAction="http://tempuri.org/DeleteMovie" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMovie">
+      <soap:operation soapAction="http://tempuri.org/UpdateMovie" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMovie">
+      <soap:operation soapAction="http://tempuri.org/GetMovie" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMovies">
+      <soap:operation soapAction="http://tempuri.org/GetAllMovies" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -794,6 +1167,24 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetSchedule">
+      <soap12:operation soapAction="http://tempuri.org/GetSchedule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSchedules">
+      <soap12:operation soapAction="http://tempuri.org/GetAllSchedules" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="AddSeat">
       <soap12:operation soapAction="http://tempuri.org/AddSeat" style="document" />
       <wsdl:input>
@@ -821,6 +1212,24 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetSeat">
+      <soap12:operation soapAction="http://tempuri.org/GetSeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSeats">
+      <soap12:operation soapAction="http://tempuri.org/GetAllSeats" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="AddPurchase">
       <soap12:operation soapAction="http://tempuri.org/AddPurchase" style="document" />
       <wsdl:input>
@@ -841,6 +1250,69 @@
     </wsdl:operation>
     <wsdl:operation name="DeletePurchase">
       <soap12:operation soapAction="http://tempuri.org/DeletePurchase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPurchase">
+      <soap12:operation soapAction="http://tempuri.org/GetPurchase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPurchases">
+      <soap12:operation soapAction="http://tempuri.org/GetAllPurchases" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddMovie">
+      <soap12:operation soapAction="http://tempuri.org/AddMovie" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMovie">
+      <soap12:operation soapAction="http://tempuri.org/DeleteMovie" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMovie">
+      <soap12:operation soapAction="http://tempuri.org/UpdateMovie" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMovie">
+      <soap12:operation soapAction="http://tempuri.org/GetMovie" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMovies">
+      <soap12:operation soapAction="http://tempuri.org/GetAllMovies" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
