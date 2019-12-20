@@ -5,7 +5,7 @@ using System.Web;
 
 namespace PP4.Services.MVC_Service.Models.ViewModels.ViewModelPerson
 {
-    public class TablaModel
+    public class TablaViewModel
     {
 
         public int ID_Person { get; set; }

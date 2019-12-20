@@ -1,4 +1,4 @@
-﻿using PP4.Services.MVC.Services.ServiceReference1;
+﻿using PP4.Services.MVC_Service.ServiceReference1;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +13,7 @@ namespace PP4.Services.MVC.Services.Controllers
         public ActionResult Index()
         {
             WebService1SoapClient client = new WebService1SoapClient();
-            Room[] listrooms = client.GetRooms();
+            Room[] listrooms = client.GetAllRooms();
 
             List<Room> list = new List<Room>();
             foreach (Room item in listrooms)
