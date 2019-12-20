@@ -19,6 +19,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PP4.Services.MVC_Direct", "
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PP4.Services.MVC_Service", "PP4.Services.MVC_Service\PP4.Services.MVC_Service.csproj", "{80E8E4BB-89DF-4F34-BA47-1DCC1404A152}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2C9C5FF1-1E0B-4C32-BF9B-376623E01244} = {2C9C5FF1-1E0B-4C32-BF9B-376623E01244}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PP4.Services.MVC_UI", "PP4.Services.MVC_UI\PP4.Services.MVC_UI.csproj", "{63CFCE63-74EE-49DA-AAF0-6AEB27DB181E}"
 EndProject

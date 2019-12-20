@@ -16,7 +16,7 @@ namespace PP4.DAL
 
             : base("name=CFPP4")
         {
-
+            this.Configuration.ProxyCreationEnabled = false;
         }
 
         public DbSet<Person> Persons { get; set; }

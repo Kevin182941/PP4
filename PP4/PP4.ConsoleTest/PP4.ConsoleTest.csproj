@@ -69,20 +69,46 @@
     <None Include="Connected Services\ServiceReference1\PP4.ConsoleTest.ServiceReference1.AddPersonResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReference1\PP4.ConsoleTest.ServiceReference1.FindPersonResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\PP4.ConsoleTest.ServiceReference1.AddPurchaseResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReference1\PP4.ConsoleTest.ServiceReference1.HelloWorldResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\PP4.ConsoleTest.ServiceReference1.AddRoomResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReference1\PP4.ConsoleTest.ServiceReference1.Person.datasource">
+    <None Include="Connected Services\ServiceReference1\PP4.ConsoleTest.ServiceReference1.AddScheduleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\PP4.ConsoleTest.ServiceReference1.AddSeatResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\PP4.ConsoleTest.ServiceReference1.GetAllPeopleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\PP4.ConsoleTest.ServiceReference1.GetAllRoomsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\PP4.ConsoleTest.ServiceReference1.GetPersonResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\PP4.ConsoleTest.ServiceReference1.GetRoomResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReference1\PP4.ConsoleTest.ServiceReference1.UpdatePersonResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ServiceReference1\PP4.ConsoleTest.ServiceReference1.UpdateRoomResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\PP4.ConsoleTest.ServiceReference1.UpdateSeatResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ServiceReference1\WebService1.wsdl" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\WebApplication.ServiceReference1.Person.datasource" />
+    <None Include="Properties\DataSources\WebApplication.ServiceReference1.Purchase.datasource" />
+    <None Include="Properties\DataSources\WebApplication.ServiceReference1.Room.datasource" />
+    <None Include="Properties\DataSources\WebApplication.ServiceReference1.Schedule.datasource" />
+    <None Include="Properties\DataSources\WebApplication.ServiceReference1.Seat.datasource" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WebApplication\Services.WCF.csproj">

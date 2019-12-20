@@ -27,7 +27,7 @@ namespace WebApplication
 
 
         [WebMethod]       
-        public Person AddPerson(string Identification,string Name,string Mail,string Password)
+        public Person AddPerson(string Identification,string Name,string Mail,string Password,int points,bool state)
         {
             Data_People data_People = new Data_People();
             Person person = new Person();
@@ -35,8 +35,8 @@ namespace WebApplication
             person.Name = Name;
             person.Mail = Mail;
             person.Password = Password;
-            person.Points = 10;
-            person.Ind_User = true;
+            person.Points = points;
+            person.Ind_User = state;
              
         data_People.Insert(person);
 
@@ -54,7 +54,7 @@ namespace WebApplication
 
 
         [WebMethod]
-        public void UpdatePerson(int id,string Identification, string Name, string Mail, string Password)
+        public void UpdatePerson(int id, string Identification, string Name, string Mail, string Password, int points, bool state)
         {
             Data_People data_People = new Data_People();
             Person person = new Person();
@@ -63,9 +63,29 @@ namespace WebApplication
             person.Name = Name;
             person.Mail = Mail;
             person.Password = Password;
-            person.Points = 10;
-            person.Ind_User = true;
+            person.Points = points;
+            person.Ind_User = state;
             data_People.Update(person);
+        }
+
+        [WebMethod]
+        public Person GetPerson(int id)
+        {
+            Data_People data_People = new Data_People();
+            var person = data_People.GetrById(id);
+            return person;
+
+        }
+
+        [WebMethod]
+        public List<Person> GetAllPeople() 
+        {
+            using (DBContextCF context = new DBContextCF()) 
+            {
+                var person = context.Persons.ToList();
+                return person;
+            }
+               
         }
 
       
@@ -106,6 +126,26 @@ namespace WebApplication
         {
             Data_Room data_Room = new Data_Room();
             data_Room.Delete(id);
+        }
+
+        [WebMethod]
+        public Room GetRoom(int id)
+        {
+            Data_Room data_Room = new Data_Room();
+            var room = data_Room.GetrById(id);
+            return room;
+
+        }
+
+        [WebMethod]
+        public List<Room> GetAllRooms()
+        {
+            using (DBContextCF context = new DBContextCF())
+            {
+                var room = context.Rooms.ToList();
+                return room;
+            }
+
         }
 
         ////////////////////////////////////////////Schedule////////////////////////////////////////////////////////////

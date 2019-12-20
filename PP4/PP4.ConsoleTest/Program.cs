@@ -13,7 +13,7 @@ namespace PP4.ConsoleTest
         static void Main(string[] args)
         {
 
-            WebService1SoapClient client = new  WebService1SoapClient();
+          
 
             
                     
