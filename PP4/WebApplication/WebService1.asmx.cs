@@ -185,6 +185,27 @@ namespace WebApplication
             data_Schedule.Delete(id);
         }
 
+        [WebMethod]
+        public Schedule GetSchedule(int id)
+        {
+            Data_Schedule data_Schedule = new Data_Schedule();
+            var schedule = data_Schedule.GetrById(id);
+            return schedule;
+
+        }
+
+        [WebMethod]
+        public List<Schedule> GetAllSchedules()
+        {
+            using (DBContextCF context = new DBContextCF())
+            {
+                var schedule = context.Schedules.ToList();
+                return schedule;
+            }
+
+        }
+
+
         ////////////////////////////////////////////Seat////////////////////////////////////////////////////////////
 
 
@@ -229,6 +250,26 @@ namespace WebApplication
             data_Seat.Delete(id);
         }
 
+        [WebMethod]
+        public Seat GetSeat(int id)
+        {
+            Data_Seat data_Seat = new Data_Seat();
+            var seat = data_Seat.GetrById(id);
+            return seat;
+
+        }
+
+        [WebMethod]
+        public List<Seat> GetAllSeats()
+        {
+            using (DBContextCF context = new DBContextCF())
+            {
+                var seat = context.Seats.ToList();
+                return seat;
+            }
+
+        }
+
         ////////////////////////////////////////////Purchase////////////////////////////////////////////////////////////
 
         [WebMethod]
@@ -267,6 +308,26 @@ namespace WebApplication
         {
             Data_Purchase data_Purchase = new Data_Purchase();
             data_Purchase.Delete(id);
+        }
+
+        [WebMethod]
+        public Purchase GetPurchase(int id)
+        {
+            Data_Purchase data_Purchase = new Data_Purchase();
+            var purchase = data_Purchase.GetrById(id);
+            return purchase;
+
+        }
+
+        [WebMethod]
+        public List<Purchase> GetAllPurchases()
+        {
+            using (DBContextCF context = new DBContextCF())
+            {
+                var purchase = context.Purchases.ToList();
+                return purchase;
+            }
+
         }
 
         ////////////////////////////////////////////Purchase_Seat////////////////////////////////////////////////////////////
