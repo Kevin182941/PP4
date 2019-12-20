@@ -1,17 +1,53 @@
-﻿
+﻿@model List<PP4.Services.MVC_UI.Models.ViewModels.ViewModelClientPurchase.ListClientPurchaseViewModel>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Information about purchase";
 }
 
-<h2><img src="https://localhost:44323/Images/2251682.png" />Welcome!</h2>
+<h2>Purchase </h2>
 
-<td>
-    <a class="btn btn-danger">A-1</a>
- 
-    <tf></tf>
-    <a class="btn btn-primary">A-2</a>
-    <tf></tf>
-    <a class="btn btn-warning">A-3</a>
-    <tf></tf>
-    <a class="btn btn-success">A-4</a>
-</td>
+<h2>
+    <img src="~/Images/imax.PNG" />
+</h2>
+
+<div class="row" style="text-align:right" ;paddinng:5px;>
+    <a href="~/ClientPurchase/New" class="btn btn-primary">Ingresar</a>
+</div>
+<br />
+
+<br />
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <tr>
+                <td>ID_Purchase</td>
+                <th>ID_Batch</th>
+                <th>ID_Person</th>
+                <th>Date_Purchase</th>
+
+
+
+
+            </tr>
+            @foreach (var Elemento in Model)
+            {
+
+                <tr>
+                    <td>@Elemento.ID_Purchase</td>
+                    <td>@Elemento.ID_Batch</td>
+                    <td>@Elemento.ID_Person</td>
+                    <td>@Elemento.Date_Purchase</td>
+
+                    <td>
+                        <tf></tf>
+                        <a class="btn btn-danger" href="~/ClientPurchase/Delete/@Elemento.ID_Purchase">Delete</a>
+                    </td>
+                </tr>
+
+
+
+            }
+
+        </table>
+
+    </div>
+</div>
