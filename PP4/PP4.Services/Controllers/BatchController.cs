@@ -28,22 +28,22 @@ namespace PP4.Services.Controllers
                                ID_Movie = d.ID_Movie,
 
                            }).ToList();
+
+                     
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine("ServicesMVC_Direct.BatchController.ActionResult_Index" + ex.Message);
-                    
+                    return null; //de otra forma retorne nulo
+
                 }
+               return View(lst);
 
             }
-            return View(lst);
+
         }
 
-        public ActionResult New()
-        {
 
-            return View();
-        }
 
         [HttpPost]
         public ActionResult New(TablaViewModel model)
@@ -60,7 +60,7 @@ namespace PP4.Services.Controllers
                         batch.ID_Room = model.ID_Room;
                         batch.ID_Schedule = model.ID_Schedule;
                         batch.ID_Movie = model.ID_Movie;
-                       
+
 
                         db.Batches.Add(batch);
                         db.SaveChanges();
@@ -76,10 +76,13 @@ namespace PP4.Services.Controllers
             catch (Exception ex)
             {
                 Console.WriteLine("ServicesMVC_Direct.BatchController.ActionResult New(TablaViewModel model)" + ex.Message);
-
+               return null; //de otra forma retorne nulo
             }
+           
+
 
         }
+
 
         public ActionResult Edit(int id)
         {
@@ -138,8 +141,10 @@ namespace PP4.Services.Controllers
             catch (Exception ex)
             {
                 Console.WriteLine("ServicesMVC_Direct.BatchController.ActionResult_Edit(TablaViewModel model)" + ex.Message);
-
+             return null; //de otra forma retorne nulo
             }
+           
+
         }
 
         [HttpGet]

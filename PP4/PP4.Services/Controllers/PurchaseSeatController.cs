@@ -32,7 +32,8 @@ namespace PP4.Services.Controllers
                 {
 
                     Console.WriteLine("ServicesMVC_Direct.PurchaseSeatController.ActionResult_Index" + ex.Message);
-                    ;
+                    return null; //de otra forma retorne nulo
+
                 }
 
 
@@ -76,6 +77,8 @@ namespace PP4.Services.Controllers
             catch (Exception ex)
             {
                 Console.WriteLine("ServicesMVC_Direct.PurchaseSeatController.ActionResult_New(TablaViewModel model)" + ex.Message);
+                return null; //de otra forma retorne nulo
+
             }
 
         }
@@ -134,6 +137,7 @@ namespace PP4.Services.Controllers
             catch (Exception ex)
             {
                 Console.WriteLine("ServicesMVC_Direct.PurchaseSeatController.ActionResult_Edit(TablaViewModel model)" + ex.Message);
+                return null; //de otra forma retorne nulo
 
 
             }
@@ -151,7 +155,7 @@ namespace PP4.Services.Controllers
                 db.Purchase_Seats.Remove(purchase_seat);
                 db.SaveChanges();
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
 
                     Console.WriteLine("ServicesMVC_Direct.PurchaseSeatController.ActionResult_Delete" + ex.Message);

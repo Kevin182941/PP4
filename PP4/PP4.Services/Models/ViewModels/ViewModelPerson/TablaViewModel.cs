@@ -28,7 +28,7 @@ namespace PP4.Services.Models.ViewModels
         [EmailAddress]
         public string Mail { get; set; }
 
-        [Required]
+        [Required]       
         [Display(Name = "Password")]
         [StringLength(20)]
         public string Password { get; set; }

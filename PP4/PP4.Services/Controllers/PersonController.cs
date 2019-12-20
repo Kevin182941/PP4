@@ -38,6 +38,7 @@ namespace PP4.Services.Controllers
                 {
 
                     Console.WriteLine("ServicesMVC_Direct.PersonController.ActionResult_Index" + ex.Message);
+                    return null; //de otra forma retorne nulo
 
                 }
 
@@ -84,6 +85,7 @@ namespace PP4.Services.Controllers
             } catch (Exception ex)
             {
                 Console.WriteLine("ServicesMVC_Direct.PersonController.ActionResult_New(TablaViewModel model)" + ex.Message);
+                return null; //de otra forma retorne nulo
 
             }
 
@@ -149,6 +151,7 @@ namespace PP4.Services.Controllers
             catch (Exception ex)
             {
                 Console.WriteLine("ServicesMVC_Direct.PersonController.ActionResult_Edit(TablaViewModel model)" + ex.Message);
+                return null; //de otra forma retorne nulo
 
             }
         }

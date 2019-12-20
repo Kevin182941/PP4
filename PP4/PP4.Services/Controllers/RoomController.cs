@@ -33,6 +33,7 @@ namespace PP4.Services.Controllers
                 {
 
                     Console.WriteLine("ServicesMVC_Direct.RoomController.ActionResult_Index" + ex.Message);
+                    return null; //de otra forma retorne nulo
 
                 }
 
@@ -78,6 +79,7 @@ namespace PP4.Services.Controllers
             catch (Exception ex)
             {
                 Console.WriteLine("ServicesMVC_Direct.RoomController.ActionResult_New(TablaViewModel model)" + ex.Message);
+                return null; //de otra forma retorne nulo
 
             }
 
@@ -102,6 +104,7 @@ namespace PP4.Services.Controllers
                 {
 
                     Console.WriteLine("ServicesMVC_Direct.RoomController.ActionResult_Edit(int id)" + ex.Message);
+
                 }
 
 
@@ -140,6 +143,7 @@ namespace PP4.Services.Controllers
             catch (Exception ex)
             {
                 Console.WriteLine("ServicesMVC_Direct.RoomController.ActionResult_Edit(TablaViewModel model)" + ex.Message);
+                return null; //de otra forma retorne nulo
 
             }
         }
@@ -156,10 +160,12 @@ namespace PP4.Services.Controllers
                 db.Rooms.Remove(room);
                 db.SaveChanges();
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
 
                     Console.WriteLine("ServicesMVC_Direct.RoomController.ActionResult_Delete" + ex.Message);
+                    return null; //de otra forma retorne nulo
+
                 }
 
 

@@ -30,16 +30,18 @@ namespace PP4.Services.Controllers
 
                        }).ToList();
 
+                return View(lst);
                 }
                 catch (Exception ex)
                 {
 
                     Console.WriteLine("ServicesMVC_Direct.MovieController.ActionResult_Index" + ex.Message);
-                    ;
+                                    return null; //de otra forma retorne nulo
+
                 }
 
             }
-            return View(lst);
+
 
         }
 
@@ -79,8 +81,10 @@ namespace PP4.Services.Controllers
             catch (Exception ex)
             {
                 Console.WriteLine("ServicesMVC_Direct.MovieController.ActionResult_New(TablaViewModel model)" + ex.Message);
+            return null; //de otra forma retorne nulo
 
             }
+
 
         }
 
@@ -99,17 +103,21 @@ namespace PP4.Services.Controllers
                 model.Duration = model.Duration;
                 model.State = model.State;            
                 model.ID_Movie = movie.ID_Movie;
+               
+
                 }
                 catch (Exception ex)
                 {
 
                     Console.WriteLine("ServicesMVC_Direct.MovieController.ActionResult_Edit" + ex.Message);
-                    
-                }
+                                    return null; //de otra forma retorne nulo
 
+                }
+              return View(model);
 
             }
-            return View(model);
+
+
         }
 
         [HttpPost]
@@ -142,8 +150,10 @@ namespace PP4.Services.Controllers
             catch (Exception ex)
             {
                 Console.WriteLine("ServicesMVC_Direct.MovieController.ActionResult_New(TablaViewModel model)" + ex.Message);
-
+             return null; //de otra forma retorne nulo
             }
+            
+
         }
 
         [HttpGet]
@@ -158,18 +168,22 @@ namespace PP4.Services.Controllers
                 var movie = db.Movies.Find(id);
                 db.Movies.Remove(movie);
                 db.SaveChanges();
+                return Redirect("~/Movie/");
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
 
                     Console.WriteLine("ServicesMVC_Direct.MovieController.ActionResult_Delete" + ex.Message);
-                    
+                                return null; //de otra forma retorne nulo
+
                 }
 
 
 
             }
-            return Redirect("~/Movie/");
+
+
         }
+
     }
 }
