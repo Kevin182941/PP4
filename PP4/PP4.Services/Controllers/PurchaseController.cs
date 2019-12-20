@@ -16,6 +16,8 @@ namespace PP4.Services.Controllers
             List<ListPurchaseViewModel> lst;
             using (DBContextCF db = new DBContextCF())
             {
+                try
+                {
                 lst = (from d in db.Purchases
                        select new ListPurchaseViewModel
                        {
@@ -26,6 +28,14 @@ namespace PP4.Services.Controllers
                           
 
                        }).ToList();
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine("ServicesMVC_Direct.PurchaseController.ActionResult_Index" + ex.Message);
+                    
+                }
+
 
             }
             return View(lst);
@@ -68,7 +78,7 @@ namespace PP4.Services.Controllers
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                Console.WriteLine("ServicesMVC_Direct.PurchaseController.ActionResult_New" + ex.Message);
 
             }
 
@@ -79,13 +89,21 @@ namespace PP4.Services.Controllers
             TablaViewModel model = new TablaViewModel();
             using (DBContextCF db = new DBContextCF())
             {
-
+                try
+                {
                 var purchase = db.Purchases.Find(id);
 
                 model.ID_Batch = model.ID_Batch;
                 model.ID_Person = model.ID_Person;
                 model.Date_Purchase = model.Date_Purchase;
                 model.ID_Purchase = purchase.ID_Purchase;
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine("ServicesMVC_Direct.PurchaseController.ActionResult_Edit" + ex.Message);
+                }
+
 
             }
             return View(model);
@@ -120,7 +138,7 @@ namespace PP4.Services.Controllers
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                Console.WriteLine("ServicesMVC_Direct.PurchaseController.ActionResult_Edit(TablaViewModel model)" + ex.Message);
 
             }
         }
@@ -131,10 +149,19 @@ namespace PP4.Services.Controllers
             TablaViewModel model = new TablaViewModel();
             using (DBContextCF db = new DBContextCF())
             {
-
+                try
+                {
                 var purchase = db.Purchases.Find(id);
                 db.Purchases.Remove(purchase);
                 db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine("ServicesMVC_Direct.PurchaseController.ActionResult_Delete" + ex.Message);
+                    ;
+                }
+
 
 
             }

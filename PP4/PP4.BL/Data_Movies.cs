@@ -27,7 +27,7 @@ namespace PP4.BL
                         context.SaveChanges();
                     }
                 }
-                catch
+                catch (Exception ex)
                 {
                     Console.WriteLine("BL.Data_Movies.Delete" + ex.Message);
 
@@ -43,7 +43,7 @@ namespace PP4.BL
                 {
                     return context.Movies.ToList();
                 }
-                catch
+                catch (Exception ex)
                 {
                     Console.WriteLine("BL.Data_Movies.IEnumerable_Get" + ex.Message);
 
@@ -60,7 +60,7 @@ namespace PP4.BL
                 {
                     return context.Movies.Where(x => x.ID_Movie == IDMovie).SingleOrDefault();
                 }
-                catch
+                catch (Exception ex)
                 {
                     Console.WriteLine("BL.Data_Movies.GetrById" + ex.Message);
 
@@ -78,7 +78,7 @@ namespace PP4.BL
                     context.Movies.Add(item);
                     context.SaveChanges();
                 }
-                catch
+                catch (Exception ex)
                 {
                     Console.WriteLine("BL.Data_Movies.Insert" + ex.Message);
 
@@ -95,7 +95,7 @@ namespace PP4.BL
                     context.Entry(item).State = EntityState.Modified;
                     context.SaveChanges();
                 }
-                catch
+                catch (Exception ex)
                 {
                     Console.WriteLine("BL.Data_Movies.Update" + ex.Message);
 

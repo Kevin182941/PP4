@@ -16,15 +16,24 @@ namespace PP4.Services.Controllers
             List<ListBatchViewModel> lst;
             using (DBContextCF db = new DBContextCF())
             {
-                lst = (from d in db.Batches
-                       select new ListBatchViewModel
-                       {
-                           ID_Batch = d.ID_Batch,
-                           ID_Room = d.ID_Room,
-                           ID_Schedule = d.ID_Schedule,
-                           ID_Movie = d.ID_Movie,
 
-                       }).ToList();
+                try
+                {
+                    lst = (from d in db.Batches
+                           select new ListBatchViewModel
+                           {
+                               ID_Batch = d.ID_Batch,
+                               ID_Room = d.ID_Room,
+                               ID_Schedule = d.ID_Schedule,
+                               ID_Movie = d.ID_Movie,
+
+                           }).ToList();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("ServicesMVC_Direct.BatchController.ActionResult_Index" + ex.Message);
+                    
+                }
 
             }
             return View(lst);
@@ -32,6 +41,7 @@ namespace PP4.Services.Controllers
 
         public ActionResult New()
         {
+
             return View();
         }
 
@@ -65,7 +75,7 @@ namespace PP4.Services.Controllers
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                Console.WriteLine("ServicesMVC_Direct.BatchController.ActionResult New(TablaViewModel model)" + ex.Message);
 
             }
 
@@ -76,13 +86,21 @@ namespace PP4.Services.Controllers
             TablaViewModel model = new TablaViewModel();
             using (DBContextCF db = new DBContextCF())
             {
+                try
+                {
+                    var batch = db.Batches.Find(id);
 
-                var batch = db.Batches.Find(id);
+                    model.ID_Room = model.ID_Room;
+                    model.ID_Schedule = model.ID_Schedule;
+                    model.ID_Movie = model.ID_Movie;
+                    model.ID_Batch = batch.ID_Batch;
+                }
+                catch (Exception ex)
+                {
 
-                model.ID_Room = model.ID_Room;
-                model.ID_Schedule = model.ID_Schedule;
-                model.ID_Movie = model.ID_Movie;
-                model.ID_Batch = batch.ID_Batch;
+                    Console.WriteLine("ServicesMVC_Direct.BatchController.ActionResult_Edit(int id)" + ex.Message);
+                }
+
 
 
             }
@@ -119,7 +137,7 @@ namespace PP4.Services.Controllers
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                Console.WriteLine("ServicesMVC_Direct.BatchController.ActionResult_Edit(TablaViewModel model)" + ex.Message);
 
             }
         }
@@ -130,10 +148,18 @@ namespace PP4.Services.Controllers
             TablaViewModel model = new TablaViewModel();
             using (DBContextCF db = new DBContextCF())
             {
+                try
+                {
+                    var batch = db.Batches.Find(id);
+                    db.Batches.Remove(batch);
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
 
-                var batch = db.Batches.Find(id);
-                db.Batches.Remove(batch);
-                db.SaveChanges();
+                    Console.WriteLine("ServicesMVC_Direct.BatchController.ActionResult_Delete" + ex.Message);
+                }
+
 
 
             }

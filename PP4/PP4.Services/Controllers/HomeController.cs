@@ -15,7 +15,16 @@ namespace PP4.Services.Controllers
 
         public ActionResult About()
         {
+            try
+            {
             ViewBag.Message = "Your application description page.";
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ServicesMVC_Direct.HomeController.ActionResult_About" + ex.Message);
+
+            }
 
             return View();
         }
@@ -23,7 +32,17 @@ namespace PP4.Services.Controllers
       
         public ActionResult Contact()
         {
+
+            try
+            {
             ViewBag.Message = "Your contact page.";
+
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("ServicesMVC_Direct.HomeController.ActionResult_Contact" + ex.Message);
+            }
 
             return View();
         }

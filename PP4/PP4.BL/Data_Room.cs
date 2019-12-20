@@ -27,7 +27,7 @@ namespace PP4.BL
                         context.SaveChanges();
                     }
                 }
-                catch
+                catch (Exception ex)
                 {
                     Console.WriteLine("BL.Data_Room.Delete" + ex.Message);
 
@@ -44,7 +44,7 @@ namespace PP4.BL
                 {
                     return context.Rooms.ToList();
                 }
-                catch
+                catch (Exception ex)
                 {
                     Console.WriteLine("BL.Data_Room.IEnumerable_Get" + ex.Message);
 
@@ -64,7 +64,7 @@ namespace PP4.BL
                 {
                     return context.Rooms.Where(x => x.ID_Room == IDRoom).SingleOrDefault();
                 }
-                catch
+                catch (Exception ex)
                 {
                     Console.WriteLine("BL.Data_Room.Room_GetrById" + ex.Message);
 
@@ -83,7 +83,7 @@ namespace PP4.BL
                     context.Rooms.Add(item);
                     context.SaveChanges();
                 }
-                catch
+                catch (Exception ex)
                 {
                     Console.WriteLine("BL.Data_Room.Insert" + ex.Message);
 
@@ -100,7 +100,7 @@ namespace PP4.BL
                     context.Entry(item).State = EntityState.Modified;
                     context.SaveChanges();
                 }
-                catch
+                catch (Exception ex)
                 {
                     Console.WriteLine("BL.Data_Room.Update" + ex.Message);
 

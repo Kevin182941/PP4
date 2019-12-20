@@ -13,9 +13,14 @@ namespace PP4.Services.Controllers
         // GET: Schedule
         public ActionResult Index()
         {
+
+
             List<ListScheduleViewModel> lst;
             using (DBContextCF db = new DBContextCF())
             {
+
+                try
+                {
                 lst = (from d in db.Schedules
                        select new ListScheduleViewModel
                        {
@@ -24,6 +29,13 @@ namespace PP4.Services.Controllers
                            State = d.State
 
                        }).ToList();
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine("ServicesMVC_Direct.ScheduleController.ActionResult_Index" + ex.Message);
+                }
+
 
             }
             return View(lst);
@@ -64,7 +76,7 @@ namespace PP4.Services.Controllers
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                Console.WriteLine("ServicesMVC_Direct.ScheduleController.ActionResult_New(TablaViewModel model)" + ex.Message);
 
             }
 
@@ -75,7 +87,8 @@ namespace PP4.Services.Controllers
             TablaViewModel model = new TablaViewModel();
             using (DBContextCF db = new DBContextCF())
             {
-
+                try
+                {
                 var schedule = db.Schedules.Find(id);
 
                 model.ID_Schedule = model.ID_Schedule;
@@ -83,6 +96,13 @@ namespace PP4.Services.Controllers
                 model.State = model.State;
                
                 model.ID_Schedule = schedule.ID_Schedule;
+
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine("ServicesMVC_Direct.ScheduleController.ActionResult_Edit" + ex.Message);
+                }
 
             }
             return View(model);
@@ -98,6 +118,7 @@ namespace PP4.Services.Controllers
 
                     using (DBContextCF db = new DBContextCF())
                     {
+
                         var schedule = db.Schedules.Find(model.ID_Schedule);
                         schedule.ID_Schedule = model.ID_Schedule;
                         schedule.Day = model.Day;
@@ -116,7 +137,8 @@ namespace PP4.Services.Controllers
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                Console.WriteLine("ServicesMVC_Direct.ScheduleController.ActionResult_Edit(TablaViewModel model)" + ex.Message);
+
 
             }
         }
@@ -127,10 +149,18 @@ namespace PP4.Services.Controllers
             TablaViewModel model = new TablaViewModel();
             using (DBContextCF db = new DBContextCF())
             {
-
+                try
+                {
                 var schedule = db.Schedules.Find(id);
                 db.Schedules.Remove(schedule);
                 db.SaveChanges();
+
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine("ServicesMVC_Direct.ScheduleController.ActionResult_Delete" + ex.Message);
+                }
 
 
             }

@@ -18,6 +18,8 @@ namespace PP4.Services.Controllers
             List<ListPersonViewModel> lst;
             using (DBContextCF db = new DBContextCF())
             {
+                try
+                {
                 lst = (from d in db.Persons
                        select new ListPersonViewModel
                        {
@@ -31,7 +33,15 @@ namespace PP4.Services.Controllers
 
 
                        }).ToList();
-                
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine("ServicesMVC_Direct.PersonController.ActionResult_Index" + ex.Message);
+
+                }
+
+
             }
             return View(lst);
 
@@ -73,10 +83,10 @@ namespace PP4.Services.Controllers
 
             } catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                Console.WriteLine("ServicesMVC_Direct.PersonController.ActionResult_New(TablaViewModel model)" + ex.Message);
 
             }
-               
+
         }
 
         public ActionResult Edit(int id)    
@@ -84,7 +94,8 @@ namespace PP4.Services.Controllers
             TablaViewModel model = new TablaViewModel();
             using (DBContextCF db = new DBContextCF())
             {
-            
+                try
+                {
                 var person = db.Persons.Find(id);
             
                 model.Identification = model.Identification;
@@ -94,6 +105,13 @@ namespace PP4.Services.Controllers
                 model.Ind_User = model.Ind_User;
                 model.Points = model.Points;
                 model.ID_Person = person.ID_Person;
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine("ServicesMVC_Direct.PersonController.ActionResult_Index" + ex.Message);
+                }
+
 
             }
             return View(model);
@@ -130,7 +148,7 @@ namespace PP4.Services.Controllers
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                Console.WriteLine("ServicesMVC_Direct.PersonController.ActionResult_Edit(TablaViewModel model)" + ex.Message);
 
             }
         }
@@ -141,11 +159,20 @@ namespace PP4.Services.Controllers
             TablaViewModel model = new TablaViewModel();
             using (DBContextCF db = new DBContextCF())
             {
-
+                try
+                {
                 var person = db.Persons.Find(id);
                 db.Persons.Remove(person);
                 db.SaveChanges();
               
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine("ServicesMVC_Direct.PersonController.ActionResult_Delete" + ex.Message);
+                    
+                }
+
 
             }
             return Redirect("~/Person/");

@@ -17,6 +17,8 @@ namespace PP4.Services.Controllers
             List<ListMovieViewModel> lst;
             using (DBContextCF db = new DBContextCF())
             {
+                try
+                {
                 lst = (from d in db.Movies
                        select new ListMovieViewModel
                        {
@@ -27,6 +29,14 @@ namespace PP4.Services.Controllers
 
 
                        }).ToList();
+
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine("ServicesMVC_Direct.MovieController.ActionResult_Index" + ex.Message);
+                    ;
+                }
 
             }
             return View(lst);
@@ -68,7 +78,7 @@ namespace PP4.Services.Controllers
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                Console.WriteLine("ServicesMVC_Direct.MovieController.ActionResult_New(TablaViewModel model)" + ex.Message);
 
             }
 
@@ -79,6 +89,8 @@ namespace PP4.Services.Controllers
             TablaViewModel model = new TablaViewModel();
             using (DBContextCF db = new DBContextCF())
             {
+                try
+                {
 
                 var movie = db.Movies.Find(id);
 
@@ -87,6 +99,14 @@ namespace PP4.Services.Controllers
                 model.Duration = model.Duration;
                 model.State = model.State;            
                 model.ID_Movie = movie.ID_Movie;
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine("ServicesMVC_Direct.MovieController.ActionResult_Edit" + ex.Message);
+                    
+                }
+
 
             }
             return View(model);
@@ -121,7 +141,7 @@ namespace PP4.Services.Controllers
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                Console.WriteLine("ServicesMVC_Direct.MovieController.ActionResult_New(TablaViewModel model)" + ex.Message);
 
             }
         }
@@ -133,9 +153,19 @@ namespace PP4.Services.Controllers
             using (DBContextCF db = new DBContextCF())
             {
 
+                try
+                {
                 var movie = db.Movies.Find(id);
                 db.Movies.Remove(movie);
                 db.SaveChanges();
+                }
+                catch (Exception)
+                {
+
+                    Console.WriteLine("ServicesMVC_Direct.MovieController.ActionResult_Delete" + ex.Message);
+                    
+                }
+
 
 
             }

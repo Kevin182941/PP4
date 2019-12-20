@@ -25,7 +25,7 @@ namespace PP4.BL
                         context.SaveChanges();
                     }
                 }
-                catch
+                catch (Exception ex)
                 {
                     Console.WriteLine("BL.Data_Purchase.Delete" + ex.Message);
 
@@ -68,7 +68,7 @@ namespace PP4.BL
                           
                     return ListPurchase;
                 }
-                catch
+                catch (Exception ex)
                 {
                     Console.WriteLine("BL.Data_Purchase.IEnumerable Get" + ex.Message);
 
@@ -109,7 +109,7 @@ namespace PP4.BL
  
                     
                 }
-                catch
+                catch (Exception ex)
                 {
                     Console.WriteLine("BL.Data_Purchase.Purchase_GetrById" + ex.Message);
 
@@ -127,7 +127,7 @@ namespace PP4.BL
                     context.Purchases.Add(item);
                     context.SaveChanges();
                 }
-                catch
+                catch (Exception ex)
                 {
                     Console.WriteLine("BL.Data_Purchase.Insert" + ex.Message);
 
@@ -144,7 +144,7 @@ namespace PP4.BL
                     context.Entry(item).State = EntityState.Modified;
                     context.SaveChanges();
                 }
-                catch
+                catch (Exception ex)
                 {
                     Console.WriteLine("BL.Data_Purchase.Update" + ex.Message);
 

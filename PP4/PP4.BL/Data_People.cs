@@ -27,7 +27,7 @@ namespace PP4.BL
                         context.SaveChanges();
                     }
                 }
-                catch
+                catch (Exception ex)
                 {
                     Console.WriteLine("BL.Data_People.Delete" + ex.Message);
 
@@ -43,7 +43,7 @@ namespace PP4.BL
                 {
                     return context.Persons.ToList();
                 }
-                catch
+                catch (Exception ex)
                 {
                     Console.WriteLine("BL.Data_People.Ienumerable_Get" + ex.Message);
 
@@ -60,7 +60,7 @@ namespace PP4.BL
                 {
                     return context.Persons.Where(x => x.ID_Person == IDPerson).SingleOrDefault();
                 }
-                catch
+                catch (Exception ex)
                 {
                     Console.WriteLine("BL.Data_People.Person_GetrById" + ex.Message);
 
@@ -78,7 +78,7 @@ namespace PP4.BL
                     context.Persons.Add(item);
                     context.SaveChanges();
                 }
-                catch
+                catch (Exception ex)
                 {
                     Console.WriteLine("BL.Data_People.Insert" + ex.Message);
 
@@ -95,7 +95,7 @@ namespace PP4.BL
                     context.Entry(item).State = EntityState.Modified;
                     context.SaveChanges();
                 }
-                catch
+                catch (Exception ex)
                 {
                     Console.WriteLine("BL.Data_People.Update" + ex.Message);
 

@@ -16,6 +16,8 @@ namespace PP4.Services.Controllers
             List<ListPurchaseSeatViewModel> lst;
             using (DBContextCF db = new DBContextCF())
             {
+                try
+                {
                 lst = (from d in db.Purchase_Seats
                        select new ListPurchaseSeatViewModel
                        {
@@ -25,6 +27,14 @@ namespace PP4.Services.Controllers
 
 
                        }).ToList();
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine("ServicesMVC_Direct.PurchaseSeatController.ActionResult_Index" + ex.Message);
+                    ;
+                }
+
 
             }
             return View(lst);
@@ -65,8 +75,7 @@ namespace PP4.Services.Controllers
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
-
+                Console.WriteLine("ServicesMVC_Direct.PurchaseSeatController.ActionResult_New(TablaViewModel model)" + ex.Message);
             }
 
         }
@@ -76,12 +85,21 @@ namespace PP4.Services.Controllers
             TablaViewModel model = new TablaViewModel();
             using (DBContextCF db = new DBContextCF())
             {
-
+                try
+                {
                 var purchase_seat = db.Purchase_Seats.Find(id);
 
                 model.ID_Purchase = model.ID_Purchase;
                 model.ID_Seat = model.ID_Seat;             
                 model.ID_Purchase_Seat = purchase_seat.ID_Purchase_Seat;
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine("ServicesMVC_Direct.PurchaseSeatController.ActionResult_Edit(id)" + ex.Message);
+
+                }
+
 
             }
             return View(model);
@@ -115,7 +133,8 @@ namespace PP4.Services.Controllers
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                Console.WriteLine("ServicesMVC_Direct.PurchaseSeatController.ActionResult_Edit(TablaViewModel model)" + ex.Message);
+
 
             }
         }
@@ -126,10 +145,18 @@ namespace PP4.Services.Controllers
             TablaViewModel model = new TablaViewModel();
             using (DBContextCF db = new DBContextCF())
             {
-
+                try
+                {
                 var purchase_seat = db.Purchase_Seats.Find(id);
                 db.Purchase_Seats.Remove(purchase_seat);
                 db.SaveChanges();
+                }
+                catch (Exception)
+                {
+
+                    Console.WriteLine("ServicesMVC_Direct.PurchaseSeatController.ActionResult_Delete" + ex.Message);
+                }
+
 
 
             }

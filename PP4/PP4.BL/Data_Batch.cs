@@ -26,7 +26,7 @@ namespace PP4.BL
                         context.SaveChanges();
                     }
                 }
-                catch
+                catch (Exception ex)
                 {
                     Console.WriteLine("BL.Data_Batch.Delete" + ex.Message);
 
@@ -42,7 +42,7 @@ namespace PP4.BL
                 {
                     return context.Batches.ToList();
                 }
-                catch
+                catch (Exception ex)
                 {
                     Console.WriteLine("BL.Data_Batch.IEnumerable_Get" + ex.Message);
 
@@ -59,7 +59,7 @@ namespace PP4.BL
                 {
                     return context.Batches.Where(x => x.ID_Batch == IDBatch).SingleOrDefault();
                 }
-                catch
+                catch (Exception ex)
                 {
                     Console.WriteLine("BL.Data_Batch.Batch_GetrById" + ex.Message);
 
@@ -78,7 +78,7 @@ namespace PP4.BL
                     context.Batches.Add(item);
                     context.SaveChanges();
                 }
-                catch
+                catch (Exception ex)
                 {
                     Console.WriteLine("BL.Data_Batch.Insert" + ex.Message);
 
@@ -97,7 +97,7 @@ namespace PP4.BL
                     context.Entry(item).State = EntityState.Modified;
                     context.SaveChanges();
                 }
-                catch
+                catch (Exception ex)
                 {
                     Console.WriteLine("BL.Data_Batch.Update" + ex.Message);
 

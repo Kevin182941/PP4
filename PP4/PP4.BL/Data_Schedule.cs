@@ -28,7 +28,7 @@ namespace PP4.BL
                         context.SaveChanges();
                     }
                 }
-                catch
+                catch (Exception ex)
                 {
                     Console.WriteLine("BL.Data_Schedule.Delete" + ex.Message);
 
@@ -46,7 +46,7 @@ namespace PP4.BL
                 {
                     return context.Schedules.ToList();
                 }
-                catch
+                catch (Exception ex)
                 {
                     Console.WriteLine("BL.Data_Schedule.IEnumerable" + ex.Message);
 
@@ -63,7 +63,7 @@ namespace PP4.BL
                 {
                     return context.Schedules.Where(x => x.ID_Schedule == IDSchedule).SingleOrDefault();
                 }
-                catch
+                catch (Exception ex)
                 {
                     Console.WriteLine("BL.Data_Schedule.Schedule_GetrById" + ex.Message);
 
@@ -81,7 +81,7 @@ namespace PP4.BL
                     context.Schedules.Add(item);
                     context.SaveChanges();
                 }
-                catch
+                catch (Exception ex)
                 {
                     Console.WriteLine("BL.Data_Schedule.Insert" + ex.Message);
 
@@ -100,7 +100,7 @@ namespace PP4.BL
                     context.Entry(item).State = EntityState.Modified;
                     context.SaveChanges();
                 }
-                catch
+                catch (Exception ex)
                 {
                     Console.WriteLine("BL.Data_Schedule.Update" + ex.Message);
 

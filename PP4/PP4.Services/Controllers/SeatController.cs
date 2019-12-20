@@ -16,6 +16,8 @@ namespace PP4.Services.Controllers
             List<ListSeatViewModel> lst;
             using (DBContextCF db = new DBContextCF())
             {
+                try
+                {
                 lst = (from d in db.Seats
                        select new ListSeatViewModel
                        {
@@ -28,6 +30,13 @@ namespace PP4.Services.Controllers
 
 
                        }).ToList();
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine("ServicesMVC_Direct.SeatController.ActionResult_Index" + ex.Message);
+                }
+
 
             }
             return View(lst);
@@ -49,6 +58,8 @@ namespace PP4.Services.Controllers
                     using (DBContextCF db = new DBContextCF())
                     {
 
+                        try
+                        {
                       var seat = new Seat();
                         seat.ID_Seat = model.ID_Seat;
                         seat.ID_Room = model.ID_Room;
@@ -59,6 +70,13 @@ namespace PP4.Services.Controllers
 
                         db.Seats.Add(seat);
                         db.SaveChanges();
+                        }
+                        catch (Exception ex)
+                        {
+
+                            Console.WriteLine("ServicesMVC_Direct.SeatController.ActionResult_New" + ex.Message);
+                        }
+
 
                     }
                     return Redirect("~/Seat/");
@@ -82,6 +100,8 @@ namespace PP4.Services.Controllers
             using (DBContextCF db = new DBContextCF())
             {
 
+                try
+                {
                 var seat = db.Seats.Find(id);
 
                 
@@ -91,6 +111,13 @@ namespace PP4.Services.Controllers
                 model.Number = model.Number;
                 model.Price = model.Price;
                 model.ID_Seat = seat.ID_Seat;
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine("ServicesMVC_Direct.SeatController.ActionResult_Edit(int id)" + ex.Message);
+                }
+
 
             }
             return View(model);
@@ -127,7 +154,7 @@ namespace PP4.Services.Controllers
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
+                Console.WriteLine("ServicesMVC_Direct.SeatController.ActionResult_Edit(TablaViewModel model)" + ex.Message);
 
             }
         }
@@ -139,9 +166,18 @@ namespace PP4.Services.Controllers
             using (DBContextCF db = new DBContextCF())
             {
 
+                try
+                {
                 var seat = db.Seats.Find(id);
                 db.Seats.Remove(seat);
                 db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine("ServicesMVC_Direct.SeatController.ActionResult_Delete" + ex.Message);
+                }
+
 
 
             }
