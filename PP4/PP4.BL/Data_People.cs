@@ -29,7 +29,7 @@ namespace PP4.BL
                 }
                 catch
                 {
-                    //Mensaje de Error;
+                    Console.WriteLine("BL.Data_People.Delete" + ex.Message);
 
                 }
             }
@@ -45,7 +45,7 @@ namespace PP4.BL
                 }
                 catch
                 {
-                    //Mensaje de Error;
+                    Console.WriteLine("BL.Data_People.Ienumerable_Get" + ex.Message);
 
                 }
             }
@@ -62,7 +62,7 @@ namespace PP4.BL
                 }
                 catch
                 {
-                    //Mensaje de Error;
+                    Console.WriteLine("BL.Data_People.Person_GetrById" + ex.Message);
 
                 }
             }
@@ -80,7 +80,7 @@ namespace PP4.BL
                 }
                 catch
                 {
-                    //Mensaje de Error;
+                    Console.WriteLine("BL.Data_People.Insert" + ex.Message);
 
                 }
             }
@@ -97,7 +97,7 @@ namespace PP4.BL
                 }
                 catch
                 {
-                    //Mensaje de Error;
+                    Console.WriteLine("BL.Data_People.Update" + ex.Message);
 
                 }
             }

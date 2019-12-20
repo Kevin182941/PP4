@@ -27,7 +27,7 @@ namespace PP4.BL
                 }
                 catch
                 {
-                    //Mensaje de Error;
+                    Console.WriteLine("BL.Data_Purchase.Delete" + ex.Message);
 
                 }
             }
@@ -70,7 +70,7 @@ namespace PP4.BL
                 }
                 catch
                 {
-                    //Mensaje de Error;
+                    Console.WriteLine("BL.Data_Purchase.IEnumerable Get" + ex.Message);
 
                 }
             }
@@ -111,7 +111,7 @@ namespace PP4.BL
                 }
                 catch
                 {
-                    //Mensaje de Error;
+                    Console.WriteLine("BL.Data_Purchase.Purchase_GetrById" + ex.Message);
 
                 }
             }
@@ -129,7 +129,7 @@ namespace PP4.BL
                 }
                 catch
                 {
-                    //Mensaje de Error;
+                    Console.WriteLine("BL.Data_Purchase.Insert" + ex.Message);
 
                 }
             }
@@ -146,7 +146,7 @@ namespace PP4.BL
                 }
                 catch
                 {
-                    //Mensaje de Error;
+                    Console.WriteLine("BL.Data_Purchase.Update" + ex.Message);
 
                 }
             }

@@ -27,7 +27,8 @@ namespace PP4.BL
                 }
                 catch
                 {
-                    //Mensaje de Error;
+                    Console.WriteLine("BL.Data_Seat.Delete" + ex.Message);
+
 
                 }
             }
@@ -43,7 +44,7 @@ namespace PP4.BL
                 }
                 catch
                 {
-                    //Mensaje de Error;
+                    Console.WriteLine("BL.Data_Seat.IEnumerable_Get" + ex.Message);
 
                 }
             }
@@ -60,7 +61,7 @@ namespace PP4.BL
                 }
                 catch
                 {
-                    //Mensaje de Error;
+                    Console.WriteLine("BL.Data_Seat.Seat_GetrById" + ex.Message);
 
                 }
             }
@@ -78,8 +79,7 @@ namespace PP4.BL
                 }
                 catch
                 {
-                    //Mensaje de Error;
-
+                    Console.WriteLine("BL.Data_Seat.Insert" + ex.Message);
                 }
             }
         }
@@ -97,7 +97,7 @@ namespace PP4.BL
                 }
                 catch
                 {
-                    //Mensaje de Error;
+                    Console.WriteLine("BL.Data_Seat.Update" + ex.Message);
 
                 }
             }

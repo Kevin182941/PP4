@@ -30,7 +30,8 @@ namespace PP4.BL
                 }
                 catch
                 {
-                    //Mensaje de Error;
+                    Console.WriteLine("BL.Data_Schedule.Delete" + ex.Message);
+
 
                 }
             }
@@ -47,7 +48,7 @@ namespace PP4.BL
                 }
                 catch
                 {
-                    //Mensaje de Error;
+                    Console.WriteLine("BL.Data_Schedule.IEnumerable" + ex.Message);
 
                 }
             }
@@ -64,7 +65,7 @@ namespace PP4.BL
                 }
                 catch
                 {
-                    //Mensaje de Error;
+                    Console.WriteLine("BL.Data_Schedule.Schedule_GetrById" + ex.Message);
 
                 }
             }
@@ -82,7 +83,7 @@ namespace PP4.BL
                 }
                 catch
                 {
-                    //Mensaje de Error;
+                    Console.WriteLine("BL.Data_Schedule.Insert" + ex.Message);
 
                 }
             }
@@ -101,7 +102,7 @@ namespace PP4.BL
                 }
                 catch
                 {
-                    //Mensaje de Error;
+                    Console.WriteLine("BL.Data_Schedule.Update" + ex.Message);
 
                 }
             }

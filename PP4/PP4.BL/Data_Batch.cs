@@ -28,7 +28,7 @@ namespace PP4.BL
                 }
                 catch
                 {
-                    //Mensaje de Error;
+                    Console.WriteLine("BL.Data_Batch.Delete" + ex.Message);
 
                 }
             }
@@ -44,7 +44,7 @@ namespace PP4.BL
                 }
                 catch
                 {
-                    //Mensaje de Error;
+                    Console.WriteLine("BL.Data_Batch.IEnumerable_Get" + ex.Message);
 
                 }
             }
@@ -61,7 +61,8 @@ namespace PP4.BL
                 }
                 catch
                 {
-                    //Mensaje de Error;
+                    Console.WriteLine("BL.Data_Batch.Batch_GetrById" + ex.Message);
+
 
                 }
             }
@@ -79,7 +80,7 @@ namespace PP4.BL
                 }
                 catch
                 {
-                    //Mensaje de Error;
+                    Console.WriteLine("BL.Data_Batch.Insert" + ex.Message);
 
                 }
             }
@@ -98,7 +99,7 @@ namespace PP4.BL
                 }
                 catch
                 {
-                    //Mensaje de Error;
+                    Console.WriteLine("BL.Data_Batch.Update" + ex.Message);
 
                 }
             }

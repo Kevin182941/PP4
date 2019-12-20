@@ -29,7 +29,7 @@ namespace PP4.BL
                 }
                 catch
                 {
-                    //Mensaje de Error;
+                    Console.WriteLine("BL.Data_Room.Delete" + ex.Message);
 
                 }
             }
@@ -46,7 +46,7 @@ namespace PP4.BL
                 }
                 catch
                 {
-                    //Mensaje de Error;
+                    Console.WriteLine("BL.Data_Room.IEnumerable_Get" + ex.Message);
 
                 }
             }
@@ -66,7 +66,7 @@ namespace PP4.BL
                 }
                 catch
                 {
-                    //Mensaje de Error;
+                    Console.WriteLine("BL.Data_Room.Room_GetrById" + ex.Message);
 
                 }
             }
@@ -85,7 +85,7 @@ namespace PP4.BL
                 }
                 catch
                 {
-                    //Mensaje de Error;
+                    Console.WriteLine("BL.Data_Room.Insert" + ex.Message);
 
                 }
             }
@@ -102,7 +102,7 @@ namespace PP4.BL
                 }
                 catch
                 {
-                    //Mensaje de Error;
+                    Console.WriteLine("BL.Data_Room.Update" + ex.Message);
 
                 }
             }

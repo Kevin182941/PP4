@@ -29,7 +29,7 @@ namespace PP4.BL
                 }
                 catch
                 {
-                    //Mensaje de Error;
+                    Console.WriteLine("BL.Data_Movies.Delete" + ex.Message);
 
                 }
             }
@@ -45,7 +45,7 @@ namespace PP4.BL
                 }
                 catch
                 {
-                    //Mensaje de Error;
+                    Console.WriteLine("BL.Data_Movies.IEnumerable_Get" + ex.Message);
 
                 }
             }
@@ -62,7 +62,7 @@ namespace PP4.BL
                 }
                 catch
                 {
-                    //Mensaje de Error;
+                    Console.WriteLine("BL.Data_Movies.GetrById" + ex.Message);
 
                 }
             }
@@ -80,7 +80,7 @@ namespace PP4.BL
                 }
                 catch
                 {
-                    //Mensaje de Error;
+                    Console.WriteLine("BL.Data_Movies.Insert" + ex.Message);
 
                 }
             }
@@ -97,7 +97,7 @@ namespace PP4.BL
                 }
                 catch
                 {
-                    //Mensaje de Error;
+                    Console.WriteLine("BL.Data_Movies.Update" + ex.Message);
 
                 }
             }
