@@ -1,0 +1,111 @@
+USE [BDPP4]
+GO
+------------------------------------------------------------------
+CREATE PROCEDURE P_GET_BATCHES (@id_batch INT,@id_room INT,@id_schedule INT,@id_movie INT)AS
+
+BEGIN
+   SELECT a.ID_Batch,a.ID_Room,b.Description AS Room,a.ID_Movie,
+		  d.Description_Movie AS Movie,a.ID_Schedule,c.Day
+     FROM Batches a,Rooms b,Schedules c, Movies d
+	WHERE a.ID_Room = b.ID_Room
+	  AND a.ID_Movie = d.ID_Movie
+	  AND a.ID_Schedule = c.ID_Schedule
+	  AND (LEN(@id_batch)    = 0 or a.ID_Batch    = @id_batch) 
+	  AND (LEN(@id_room)     = 0 or a.ID_Room     = @id_room)
+	  AND (LEN(@id_schedule) = 0 or a.ID_Schedule = @id_schedule)
+	  AND (LEN(@id_movie)    = 0 or a.ID_Movie    = @id_movie)
+END
+GO
+------------------------------------------------------------------------------------------------------
+CREATE PROCEDURE P_GET_MOVIE (@id_Movie INT)AS
+
+BEGIN
+   SELECT ID_Movie,Description_Movie,Duration,State
+     FROM Movies
+	WHERE (LEN(@id_Movie) = 0 or ID_Movie = @id_Movie) 
+ 
+END
+GO
+------------------------------------------------------------------------------------------------------
+CREATE PROCEDURE P_GET_PEOPLE (@id_person INT)AS
+
+BEGIN
+   SELECT ID_Person,Name,Identification,Mail,Password,Ind_User,Points
+     FROM People
+	WHERE (LEN(@id_person) = 0 or ID_Person = @id_person) 
+ 
+END
+GO
+------------------------------------------------------------------------------------------------------
+CREATE PROCEDURE P_GET_PURCHASE_SEAT (@id_puchaseseat INT,@id_puchase INT,@id_seat INT)AS
+
+BEGIN
+
+	SELECT a.ID_Purchase,b.ID_Purchase_Seat,D.Description AS Room,H.Description_Seat AS Seat,
+		   H.Row,H.Number,H.Price
+	  FROM Purchases a, Purchase_Seat B,Rooms D,Seats H
+	 WHERE a.ID_Purchase = B.ID_Purchase
+	   AND B.ID_Seat = H.ID_Seat
+	   AND H.ID_Room = D.ID_Room
+	   AND (LEN(@id_puchaseseat) = 0 or b.ID_Purchase_Seat = @id_puchaseseat) 
+	   AND (LEN(@id_puchase)     = 0 or b.ID_Purchase_Seat = @id_puchase)
+	   AND (LEN(@id_seat)        = 0 or b.ID_Seat          = @id_seat) 
+
+END
+GO
+------------------------------------------------------------------------------------------------------
+CREATE PROCEDURE P_GET_PURCHASE (@id_puchase INT,@id_batch INT,@id_person INT)AS
+
+BEGIN
+
+	SELECT a.ID_Purchase,a.ID_Person,c.Name,e.ID_Room,d.Description AS Room,i.Quanty_Purchase,e.ID_Movie,
+	       f.Description_Movie AS Movie,I.Total_Pay,a.Date_Purchase
+      FROM Purchases a,People c, Rooms d,Batches e,Movies f, Schedules g,
+	       (SELECT y.ID_Purchase, SUM(z.Price) AS Total_Pay,COUNT(y.ID_Purchase) Quanty_Purchase
+	         FROM Purchase_Seat y ,Seats z
+	        WHERE y.ID_Seat = z.ID_Seat
+	     GROUP BY y.ID_Purchase
+	        )i
+      WHERE a.ID_Person = C.ID_Person
+        AND a.ID_Batch = E.ID_Batch
+        AND e.ID_Movie =F.ID_Movie
+        AND e.ID_Room = D.ID_Room
+        AND e.ID_Schedule = G.ID_Schedule
+		AND a.ID_Purchase = i.ID_Purchase
+   GROUP BY a.ID_Purchase,a.ID_Person,c.Name,e.ID_Room,d.Description ,i.Quanty_Purchase,e.ID_Movie,
+	       f.Description_Movie ,I.Total_Pay,a.Date_Purchase
+
+END
+GO
+-----------------------------------------------------------------------------------------------------
+CREATE PROCEDURE P_GET_ROOM(@id_room INT)AS
+
+BEGIN
+   SELECT ID_Room,Description,Capacity,State
+     FROM Rooms
+	WHERE (LEN(@id_room) = 0 or ID_Room = @id_room) 
+ 
+END
+GO
+-----------------------------------------------------------------------------------------------------
+CREATE PROCEDURE P_GET_Schedules(@id_schedules INT)AS
+
+BEGIN
+   SELECT ID_Schedule,Day,State
+     FROM Schedules
+	WHERE (LEN(@id_schedules) = 0 or ID_Schedule = @id_schedules) 
+ 
+END
+GO
+-----------------------------------------------------------------------------------------------------
+CREATE PROCEDURE P_GET_Seats(@id_seat INT,@id_room INT)AS
+
+BEGIN
+   SELECT a.ID_Room,b.Description,a.ID_Seat,a.Description_Seat,a.Row,a.Number,a.Price
+     FROM Seats a,Rooms b
+	WHERE a.ID_Room = b.ID_Room
+	  AND (LEN(@id_room) = 0 or a.ID_Room = @id_room) 
+	  AND (LEN(@id_seat) = 0 or a.ID_Seat = @id_seat) 
+ 
+END
+GO
