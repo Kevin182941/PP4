@@ -1,13 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Web;
-using System.Web.Services;
-using System.Xml.Serialization;
-using Newtonsoft.Json;
-using PP4.BL;
-using PP4.DAL;
+
 
 namespace WebApplication
 {
@@ -26,8 +20,8 @@ namespace WebApplication
 
 
 
-        [WebMethod]       
-        public Person AddPerson(string Identification,string Name,string Mail,string Password,int points,bool state)
+        [WebMethod]
+        public Person AddPerson(string Identification, string Name, string Mail, string Password, int points, bool state)
         {
             Data_People data_People = new Data_People();
             Person person = new Person();
@@ -37,10 +31,10 @@ namespace WebApplication
             person.Password = Password;
             person.Points = points;
             person.Ind_User = state;
-             
-        data_People.Insert(person);
 
-          
+            data_People.Insert(person);
+
+
             return person;
 
         }
@@ -48,7 +42,7 @@ namespace WebApplication
         [WebMethod]
         public void DeletePerson(int id)
         {
-            Data_People data_People = new Data_People();          
+            Data_People data_People = new Data_People();
             data_People.Delete(id);
         }
 
@@ -78,17 +72,17 @@ namespace WebApplication
         }
 
         [WebMethod]
-        public List<Person> GetAllPeople() 
+        public List<Person> GetAllPeople()
         {
-            using (DBContextCF context = new DBContextCF()) 
+            using (DBContextCF context = new DBContextCF())
             {
                 var person = context.Persons.ToList();
                 return person;
             }
-               
+
         }
 
-      
+
         ////////////////////////////////////////////ROOM////////////////////////////////////////////////////////////
 
         [WebMethod]
@@ -109,7 +103,7 @@ namespace WebApplication
         }
 
         [WebMethod]
-        public void UpdateRoom(int ID_Room,string Description, int Capacity, bool State)
+        public void UpdateRoom(int ID_Room, string Description, int Capacity, bool State)
         {
             Data_Room data_Room = new Data_Room();
             Room room = new Room();
@@ -120,7 +114,7 @@ namespace WebApplication
             data_Room.Update(room);
         }
 
-      
+
         [WebMethod]
         public void DeleteRoom(int id)
         {
@@ -155,7 +149,7 @@ namespace WebApplication
         {
             Data_Schedule data_Schedule = new Data_Schedule();
             Schedule schedule = new Schedule();
-            schedule.Day = Day;           
+            schedule.Day = Day;
             schedule.State = State;
 
 
@@ -167,7 +161,7 @@ namespace WebApplication
         }
 
         [WebMethod]
-        public void UpdateSchedule(int ID_Schedule,DateTime Day, bool State)
+        public void UpdateSchedule(int ID_Schedule, DateTime Day, bool State)
         {
             Data_Schedule data_Schedule = new Data_Schedule();
             Schedule schedule = new Schedule();
@@ -391,6 +385,63 @@ namespace WebApplication
             }
 
         }
+        ////////////////////////////////////////////BATCH////////////////////////////////////////////////////////////
+        [WebMethod]
+        public Batch AddBatch(int ID_Room, int ID_Schedule, int ID_Movie)
+        {
+            Data_Batch data_Batch = new Data_Batch();
+            var batch = new Batch();
+            // batch.ID_Batch = ID_Batch;
+            batch.ID_Room = ID_Room;
+            batch.ID_Schedule = ID_Schedule;
+            batch.ID_Movie = ID_Movie;
+
+            data_Batch.Insert(batch);
+
+
+            return batch;
+
+        }
+        [WebMethod]
+        public void DeleteBatch(int id)
+        {
+            Data_Batch data_Batch = new Data_Batch();
+            data_Batch.Delete(id);
+        }
+        [WebMethod]
+        public void UpdateBatch(int ID_Room, int ID_Schedule, int ID_Movie)
+        {
+            Data_Batch data_Batch = new Data_Batch();
+            var batch = new Batch();
+            batch.ID_Room = ID_Room;
+            batch.ID_Schedule = ID_Schedule;
+            batch.ID_Movie = ID_Movie;
+
+            data_Batch.Update(batch);
+
+        }
+
+        [WebMethod]
+        public Batch GetBatch(int id)
+        {
+            Data_Batch data_Batch = new Data_Batch();
+            var batch = data_Batch.GetrById(id);
+            return batch;
+
+        }
+
+        [WebMethod]
+        public List<Batch> GetAllBatch()
+        {
+            // consulta desd una bd
+            using (DBContextCF context = new DBContextCF())
+            {
+                var batch = context.Batch.ToList();
+                return batch;
+            }
+
+        }
+
     }
 
 }
