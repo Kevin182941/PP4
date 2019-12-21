@@ -155,7 +155,6 @@
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\MovieController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
-    <Compile Include="Controllers\PurchaseSeatController.cs" />
     <Compile Include="Controllers\RoomController.cs" />
     <Compile Include="Controllers\ScheduleController.cs" />
     <Compile Include="Controllers\SeatController.cs" />
@@ -176,7 +175,7 @@
     <Compile Include="Models\ViewModels\ViewModelRoom\TablaViewModel.cs" />
     <Compile Include="Models\ViewModels\ViewModelSchedule\ListScheduleViewModel.cs" />
     <Compile Include="Models\ViewModels\ViewModelSchedule\TablaViewModel.cs" />
-    <Compile Include="Models\ViewModels\ViewModelSeat\ListSeatViewModels.cs" />
+    <Compile Include="Models\ViewModels\ViewModelSeat\ListSeatViewModel.cs" />
     <Compile Include="Models\ViewModels\ViewModelSeat\TablaViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -280,6 +279,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\2251682.png" />
+    <Content Include="Images\6109dc9cf92600c605dd0f7a52062b0f_icon.png" />
+    <Content Include="Images\images.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Connected Services\ServiceReference1\WebService1.wsdl" />
@@ -319,6 +321,11 @@
     <Content Include="Views\Movie\Edit.cshtml" />
     <Content Include="Views\Seat\Index.cshtml" />
     <Content Include="Views\Seat\New.cshtml" />
+    <Content Include="Views\Seat\Edit.cshtml" />
+    <Content Include="Views\Main\Index.cshtml" />
+    <Content Include="Views\Purchase\Index.cshtml" />
+    <Content Include="Views\Purchase\New.cshtml" />
+    <Content Include="Views\Purchase\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -14,10 +14,10 @@ namespace PP4.Services.MVC_Service.Controllers
         public ActionResult Index()
         {
             WebService1SoapClient client = new WebService1SoapClient();
-            Seat[] listpeople = client.GetAllSeats();
+            Seat[] listseat = client.GetAllSeats();
 
             List<Seat> list = new List<Seat>();
-            foreach (Seat item in listpeople)
+            foreach (Seat item in listseat)
             {
                 list.Add(new Seat()
                 {
@@ -56,7 +56,7 @@ namespace PP4.Services.MVC_Service.Controllers
             seat.Number = model.Number;
             seat.Price = model.Price;
 
-            client.AddSeat( model.ID_Room, model.Description_Seat, model.Row, model.Number, model.Price);
+            client.AddSeat(model.ID_Room, model.Description_Seat, model.Row, model.Number, model.Price);
 
 
             return Redirect("~/Seat/");
