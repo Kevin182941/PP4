@@ -1,24 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
+using System.Web;
+using System.Web.Mvc;
+using PP4.Services.MVC_Service.ServiceReference1;
+using PP4.Services.MVC_Service.Models.ViewModels.ViewModelSchedule;
 
 namespace PP4.Services.MVC_Service.Controllers
 {
-    public class ScheduleController : ApiController
+    public class ScheduleController : Controller
     {
         // GET: Room
         public ActionResult Index()
         {
             WebService1SoapClient client = new WebService1SoapClient();
-            Room[] listShedule = client.GetAllShedule();
+            Schedule[] listShedule = client.GetAllSchedules();
 
-            List<Shedule> list = new List<Shedule>();
-            foreach (Shedule item in listshedule)
+            List<Schedule> list = new List<Schedule>();
+            foreach (Schedule item in listShedule)
             {
-                list.Add(new Shedule()
+                list.Add(new Schedule()
                 {
 
                     ID_Schedule = item.ID_Schedule,
@@ -43,7 +44,7 @@ namespace PP4.Services.MVC_Service.Controllers
             schedule.Day = model.Day;
             schedule.State = model.State;
 
-            client.AddSchedule(model.ID_Schedule, model.Day, model.State);
+            client.AddSchedule( model.Day, model.State);
 
 
             return Redirect("~/Schedule/");
@@ -75,7 +76,7 @@ namespace PP4.Services.MVC_Service.Controllers
 
                     var schedule = client.GetSchedule(model.ID_Schedule);
                     schedule.ID_Schedule = model.ID_Schedule;
-                    schedule.Day = model.v;
+                    schedule.Day = model.Day;
                     schedule.State = model.State;
 
 
@@ -92,6 +93,7 @@ namespace PP4.Services.MVC_Service.Controllers
                 throw new Exception(ex.Message);
 
             }
+        }
 
 
         [HttpGet]
@@ -106,4 +108,3 @@ namespace PP4.Services.MVC_Service.Controllers
         }
     }
     }
-}
