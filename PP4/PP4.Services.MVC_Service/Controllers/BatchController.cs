@@ -6,15 +6,15 @@
 //using PP4.Services.MVC_Service.ServiceReference1;
 //using PP4.Services.MVC_Service.Models.ViewModels.ViewModelBatch;
 
-//namespace PP4.Services.MVC_Service.Controllers
-//{
-//    public class BatchController : Controller
-//    {
-//        // GET: Batch
-//        public ActionResult Index()
-//        {
-//            WebService1SoapClient client = new WebService1SoapClient();
-//            Batch[] listBatch = client.();
+namespace PP4.Services.MVC_Service.Controllers
+{
+    public class BatchController : ApiController
+    {
+        // GET: Batch
+        public ActionResult Index()
+        {
+            WebService1SoapClient client = new WebService1SoapClient();
+            Batch[] listBatch = client.GetAllMovies();
 
 //            List<Batch> list = new List<Batch>();
 //            foreach (Batch item in listBatch)
