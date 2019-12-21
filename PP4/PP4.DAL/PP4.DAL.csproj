@@ -56,12 +56,12 @@
     <Compile Include="Migrations\201912120319177_codefirst_11_12_2019.designer.cs">
       <DependentUpon>201912120319177_codefirst_11_12_2019.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Purchase_Seat.cs" />
     <Compile Include="Batch.cs" />
     <Compile Include="Seat.cs" />
     <Compile Include="DBContextCF.cs" />
     <Compile Include="Schedule.cs" />
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Purchase.cs" />
     <Compile Include="Movie.cs" />

@@ -327,6 +327,7 @@
     <Content Include="Views\Purchase\Index.cshtml" />
     <Content Include="Views\Purchase\New.cshtml" />
     <Content Include="Views\Purchase\Edit.cshtml" />
+    <Content Include="Views\Schedule\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
