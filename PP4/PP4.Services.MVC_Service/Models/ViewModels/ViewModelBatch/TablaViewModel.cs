@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -11,6 +12,7 @@ namespace PP4.Services.MVC_Service.Models.ViewModels.ViewModelBatch
 
         public int ID_Room { get; set; }
 
+   
         public int ID_Schedule { get; set; }
 
         public int ID_Movie { get; set; }

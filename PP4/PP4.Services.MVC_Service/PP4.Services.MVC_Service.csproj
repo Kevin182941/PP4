@@ -154,6 +154,7 @@
     <Compile Include="Controllers\MovieController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Controllers\RoomController.cs" />
+    <Compile Include="Controllers\SeatController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -312,6 +313,8 @@
     <Content Include="Views\Movie\Index.cshtml" />
     <Content Include="Views\Movie\New.cshtml" />
     <Content Include="Views\Movie\Edit.cshtml" />
+    <Content Include="Views\Seat\Index.cshtml" />
+    <Content Include="Views\Seat\New.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
