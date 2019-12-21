@@ -1,12 +1,12 @@
 ﻿@model PP4.Services.MVC_Service.ServiceReference1.Seat
 
 @{
-    ViewBag.Title = "New";
+    ViewBag.Title = "Edit";
 }
 
-<h2>New</h2>
+<h2>Edit</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
@@ -14,7 +14,13 @@
         <h4>Seat</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-       
+        <div class="form-group">
+            @Html.LabelFor(model => model.ID_Seat, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ID_Seat, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ID_Seat, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.ID_Room, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -58,7 +64,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </div>
     </div>

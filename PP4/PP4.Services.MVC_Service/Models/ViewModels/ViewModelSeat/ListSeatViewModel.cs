@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace PP4.Services.MVC_Service.Models.ViewModels.ViewModelSeat
+namespace PP4.Services.MVC_Service.Models.ViewModel.ViewModelSeat
 {
-    public class ListSeatViewModels
+    public class ListSeatViewModel
     {
         public int ID_Seat { get; set; }
 
@@ -18,5 +18,6 @@ namespace PP4.Services.MVC_Service.Models.ViewModels.ViewModelSeat
         public int Number { get; set; }
 
         public decimal Price { get; set; }
+
     }
 }
