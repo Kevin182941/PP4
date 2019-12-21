@@ -7,7 +7,7 @@ using System.Web.Http;
 
 namespace PP4.Services.MVC_Service.Controllers
 {
-    public class ScheduleController : ApiController
+    public class ScheduleController : Controller
     {
         // GET: Room
         public ActionResult Index()

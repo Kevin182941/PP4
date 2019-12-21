@@ -9,7 +9,7 @@ using PP4.Services.MVC_Service.Models.ViewModels.ViewModelBatch;
 
 namespace PP4.Services.MVC_Service.Controllers
 {
-    public class BatchController : ApiController
+    public class BatchController : Controller
     {
         // GET: Batch
         public ActionResult Index()
