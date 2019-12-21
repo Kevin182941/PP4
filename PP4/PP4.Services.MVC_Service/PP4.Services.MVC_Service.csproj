@@ -154,6 +154,7 @@
     <Compile Include="Controllers\MainController.cs" />
     <Compile Include="Controllers\MovieController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
+    <Compile Include="Controllers\PurchaseController.cs" />
     <Compile Include="Controllers\RoomController.cs" />
     <Compile Include="Controllers\SeatController.cs" />
     <Compile Include="Global.asax.cs">
@@ -321,6 +322,9 @@
     <Content Include="Views\Seat\New.cshtml" />
     <Content Include="Views\Seat\Edit.cshtml" />
     <Content Include="Views\Main\Index.cshtml" />
+    <Content Include="Views\Purchase\Index.cshtml" />
+    <Content Include="Views\Purchase\New.cshtml" />
+    <Content Include="Views\Purchase\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
